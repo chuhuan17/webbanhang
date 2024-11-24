@@ -1,7 +1,7 @@
 -- Tạo cơ sở dữ liệu clothing_store
 CREATE DATABASE clothing_store;
 USE clothing_store;
-
+-- nope --
 -- Bảng Products (Sản phẩm)
 CREATE TABLE Products (
     product_id INT PRIMARY KEY AUTO_INCREMENT,
