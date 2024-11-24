@@ -1,0 +1,196 @@
+    /* Cấu trúc slider */
+    #slider .aspect-ratio-169 {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    #slider .aspect-ratio-169 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        transition: transform 0.5s ease;
+    }
+
+    .dot-container {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 0 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background-color: #fff;
+    }
+
+    /* Cấu trúc của danh sách sản phẩm */
+    #product-slider {
+        margin: 30px 0;
+    }
+
+    #product-slider .title-section h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .slider-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .product-slide {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .product {
+        margin-right: 20px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width: 249px;
+    }
+
+    .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .product img {
+        width: 100%;
+        height: 370px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .product:hover img {
+        transform: scale(1.05);
+    }
+
+    .product h3 {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .product p {
+        font-size: 16px;
+        color: #d9534f;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .link-product {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .link-product a {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 16px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .link-product a:hover {
+        color: #0056b3;
+    }
+
+    /* Các hiệu ứng chuyển động cho nút next, prev */
+    button.prev,
+    button.next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 30px;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+    }
+
+    button.prev:hover,
+    button.next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    button.prev {
+        left: 10px;
+    }
+
+    button.next {
+        right: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .product-slide {
+            flex-wrap: wrap;
+        }
+
+        .product {
+            margin-right: 15px;
+        }
+
+        #product-slider .title-section h2 {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .product-list {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 cột trên màn hình nhỏ */
+        }
+
+        .product {
+            width: 100%;
+            /* Full-width sản phẩm trên màn hình nhỏ */
+        }
+
+        button.prev,
+        button.next {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #product-slider .title-section h2 {
+            font-size: 18px;
+        }
+
+        .product {
+            width: 100%;
+            /* Full-width sản phẩm trên điện thoại */
+        }
+
+        button.prev,
+        button.next {
+            font-size: 18px;
+        }
+    }

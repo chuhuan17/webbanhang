@@ -1,0 +1,235 @@
+
+/* Căn chỉnh toàn bộ phần other */
+.other {
+    display: flex;
+    /* Đặt các mục theo hàng ngang */
+    align-items: center;
+    /* Căn giữa các mục theo chiều dọc */
+    justify-content: flex-end;
+    /* Đẩy các mục về bên phải */
+    gap: 20px;
+    /* Khoảng cách giữa các mục */
+    list-style-type: none;
+    /* Xóa ký hiệu danh sách */
+    padding: 0;
+    margin: 0;
+}
+
+/* Form tìm kiếm */
+
+
+.other input[type="text"] {
+    border: none;
+    /* Xóa viền */
+    padding: 8px 10px;
+    /* Khoảng cách bên trong */
+    outline: none;
+    /* Xóa viền khi focus */
+    width: 200px;
+    /* Chiều rộng của ô input */
+}
+
+.other button {
+    background-color: #ff6f61;
+    /* Nền nút */
+    color: white;
+    /* Màu chữ */
+    border: none;
+    /* Xóa viền */
+    padding: 8px 15px;
+    /* Khoảng cách bên trong nút */
+    cursor: pointer;
+    /* Hiển thị biểu tượng tay */
+    transition: background-color 0.3s ease;
+}
+
+.other button:hover {
+    background-color: #e55b50;
+    /* Đổi màu nền khi hover */
+}
+
+/* Phần menu người dùng */
+.user-menu-2 {
+    position: relative;
+    /* Đặt để hiển thị menu con */
+}
+
+.user-menu-2 .fa-user {
+    font-size: 18px;
+    /* Kích thước biểu tượng */
+    cursor: pointer;
+    /* Hiển thị tay khi hover */
+}
+
+.user-menu-2 .sub-menu-2 {
+    position: absolute;
+    top: 30px;
+    /* Hiển thị ngay dưới icon */
+    right: 0;
+    background-color: #f8f8f8;
+    /* Nền menu con */
+    border: 1px solid #ddd;
+    /* Viền menu */
+    border-radius: 5px;
+    /* Bo góc */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng */
+    list-style-type: none;
+    /* Xóa ký hiệu danh sách */
+    padding: 10px 0;
+    width: 200px;
+    /* Đặt chiều rộng */
+    display: none;
+    /* Ẩn menu con mặc định */
+    z-index: 10;
+}
+
+.user-menu-2:hover .sub-menu-2 {
+    display: none;
+    /* Hiển thị menu con khi hover vào biểu tượng */
+}
+
+/* Các mục trong menu con */
+.sub-menu-2 li {
+    padding: 10px 15px;
+    /* Khoảng cách bên trong */
+    font-size: 16px;
+    /* Cỡ chữ */
+    color: #333;
+    /* Màu chữ */
+    border-bottom: 1px solid #ddd;
+    /* Kẻ viền dưới */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sub-menu-2 li:last-child {
+    border-bottom: none;
+    /* Xóa viền dưới của mục cuối */
+}
+
+.sub-menu-2 li a {
+    text-decoration: none;
+    /* Xóa gạch chân */
+    color: inherit;
+    /* Giữ nguyên màu chữ */
+}
+
+.sub-menu-2 li:hover {
+    background-color: #ff6f61;
+    /* Nền khi hover */
+    color: white;
+    /* Chữ khi hover */
+}
+
+/* Biểu tượng giỏ hàng */
+.other .fa-shopping-bag {
+    font-size: 18px;
+    /* Kích thước biểu tượng */
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.other .fa-shopping-bag:hover {
+    color: #ff6f61;
+    /* Đổi màu khi hover */
+}
+
+.menu>li {
+    position: relative;
+    list-style: none;
+}
+
+.menu>li>a {
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    /* Bo góc cho mục chính */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu>li>a:hover {
+    background-color: #ff6f61;
+    /* Nền khi hover */
+    color: white;
+    /* Màu chữ khi hover */
+}
+
+/* Sub-menu */
+.sub-menu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: #f8f8f8;
+    /* Nền menu con */
+    border: 1px solid #ddd;
+    /* Viền menu con */
+    border-radius: 5px;
+    /* Bo góc menu con */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng */
+    list-style: none;
+    padding: 10px 0;
+    display: none;
+    /* Ẩn menu con mặc định */
+    z-index: 10;
+    min-width: 200px;
+    /* Đặt chiều rộng tối thiểu */
+}
+
+/* Hiển thị sub-menu khi hover */
+.menu>li:hover .sub-menu {
+    display: block;
+}
+
+/* Các mục trong sub-menu */
+.sub-menu li {
+    padding: 10px 15px;
+    /* Khoảng cách bên trong */
+    font-size: 14px;
+    color: #333;
+    /* Màu chữ */
+    border-bottom: 1px solid #ddd;
+    /* Viền dưới */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sub-menu li:last-child {
+    border-bottom: none;
+    /* Xóa viền dưới của mục cuối */
+}
+
+.sub-menu li a {
+    text-decoration: none;
+    /* Xóa gạch chân */
+    color: inherit;
+    /* Giữ nguyên màu chữ */
+}
+
+.sub-menu li:hover {
+    background-color: #ff6f61;
+    /* Nền khi hover */
+    color: white;
+    /* Chữ khi hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu>li {
+        margin-bottom: 10px;
+    }
+
+    .sub-menu {
+        position: relative;
+        top: 0;
+        left: 0;
+        box-shadow: none;
+    }
+}
