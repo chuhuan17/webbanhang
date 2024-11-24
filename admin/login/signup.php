@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
         if ($stmt_insert->execute([$user, $email, $hashed_pass,$address,$phone])) {
             $txt_succs = "Đăng ký thành công";
             $_SESSION['register'] = $user;
+            $_SESSION['email'] = $email;
             $_SESSION['user_id'] = $conn->lastInsertId(); // Lấy ID của người dùng vừa đăng ký
         } else {
             $txt_erro = "Đăng ký lỗi";

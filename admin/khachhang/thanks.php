@@ -24,7 +24,6 @@ $stmt->bind_param("sssssssss", $vnp_Amount, $vnp_BankCode, $vnp_BankTranNo, $vnp
 if ($stmt->execute()) {
 echo "Thanh toán thành công";
 unset($_SESSION['cart_code']);
-
 } else {
 echo "Thanh toán thất bại: " . $stmt->error;
 }

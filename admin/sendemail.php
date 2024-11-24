@@ -2,42 +2,46 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require './mail/PHPMailer-master/src/Exception.php';
-require './mail/PHPMailer-master/src/PHPMailer.php';
-require './mail/PHPMailer-master/src/SMTP.php';
+include 'mail/PHPMailer-master/src/Exception.php';
+include 'mail/PHPMailer-master/src/PHPMailer.php';
+include 'mail/PHPMailer-master/src/SMTP.php';
 
-$mail = new PHPMailer(true);
+class Mailer {
+    private $mail;
 
-try {
-    //Server settings
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'chwhuan17@gmail.com';                     //SMTP username
-    $mail->Password   = 'zjfc zpuh ipcq enxu';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    public function __construct() {
+        $this->mail = new PHPMailer(true);
+        $this->mail->CharSet = 'UTF-8';
+    }
 
-    //Recipients
-    $mail->setFrom('chwhuan17@gmail.com', 'Mailer');
-    $mail->addAddress('huan332004@gmail.com', 'Huân');     //Add a recipient
-    $mail->addAddress('ellen@example.com');               //Name is optional
-    // $mail->addReplyTo('info@example.com', 'Information');
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
+    public function dathanggmail($tieude,$noidung,$maildathang) {
+        try {
+            //Server settings
+            $this->mail->isSMTP();                                            //Send using SMTP
+            $this->mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+            $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+            $this->mail->Username   = 'chwhuan17@gmail.com';                  //SMTP username
+            $this->mail->Password   = 'zjfc zpuh ipcq enxu';                  //SMTP password
+            $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+            $this->mail->Port       = 465;                                    //TCP port to connect to
 
-    //Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+            //Recipients
+            $this->mail->setFrom('chwhuan17@gmail.com', 'Mailer');
+            $this->mail->addAddress($maildathang);          //Add a recipient
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Test Mail';
-    $mail->Body    = 'Content Test Mail';
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            //Content
+            $this->mail->isHTML(true);                                       //Set email format to HTML
+            $this->mail->Subject = $tieude;
+            $this->mail->Body    = $noidung;
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            $this->mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$this->mail->ErrorInfo}";
+        }
+    }
 }
+
+// Sử dụng lớp
+
+?>

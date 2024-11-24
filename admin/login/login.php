@@ -23,6 +23,9 @@ if (isset($_POST['login'])) {
         $_SESSION['role'] = $result['role']; // Giả định có trường role trong bảng users để phân quyền
         $_SESSION['login'] = $user; // Lưu tên đăng nhập vào session
         $_SESSION['user_id'] = $result['user_id']; // Lưu ID của người dùng vào session
+        $_SESSION['email'] = $result['email']; // Lưu email của người dùng vào session
+
+
         // Chuyển hướng dựa trên vai trò
         if ($result['role'] === 1) {
             header("Location: ../sanpham/productlist.php"); // Chuyển đến trang quản lý nếu là admin
