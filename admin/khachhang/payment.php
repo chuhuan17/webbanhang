@@ -83,13 +83,18 @@ include 'header.php';
                         </div>
                         <div>
                             <input type="radio" id="MOMO" name="payment_method" value="MOMO">
-                            <label for="MOMO">Thanh toán qua MOMO</label>
+                            <label for="MOMO">Thanh toán qua MOMO </label>
                         </div>
                         <div>
                             <input type="radio" id="MOMO-ATM" name="payment_method" value="MOMO-ATM">
-                            <label for="MOMO-ATM">Thanh toán qua MOMO ATM</label>
+                            <label for="MOMO-ATM">Thanh toán qua MOMO-ATM</label>
                         </div>
-                        <input type="submit" value="Thanh toán" name="redirect" class="btn btn-primary" style="width: 100%; margin-top: 10px;"></input>
+                        <?php if (count($_SESSION['cart']) > 0):
+                        ?>
+                            <input type="submit" value="Thanh toán" name="redirect" class="btn btn-primary" style="width: 100%; margin-top: 10px;"></input>
+                        <?php else: ?>
+                            <a class="w-100 btn btn-primary btn-lg" href="index.php">Mua hàng</a>
+                        <?php endif; ?>
                     </form>
                 </div>
             </div>

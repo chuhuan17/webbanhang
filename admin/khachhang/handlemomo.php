@@ -37,7 +37,7 @@ $ipnUrl = "http://localhost/webbanhang/admin/khachhang/thanks.php";
 $extraData = "";
 
 $requestId = time() . "";
-if ($payment_method == 'MOMO') {
+if ($cart_payment == 'MOMO') {
     $orderInfo = "Thanh toán mã QR";
     $requestType = "captureWallet";
 } else {
