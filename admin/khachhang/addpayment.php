@@ -30,87 +30,40 @@ foreach ($cart_items as $item) {
 }
 
 // Chèn giỏ hàng
-$insert_cart = $conn->prepare("INSERT INTO cart (user_id, cart_code, cart_status, cart_payment, total_amount) 
-                               VALUES (?, ?, ?, ?, ?)");
-$cart_status = 0; // Mặc định là chưa xử lý
-$insert_cart->bind_param("isssd", $user_id, $cart_code, $cart_status, $cart_payment, $total_amount);
 
-if (!$insert_cart->execute()) {
-    die("Lỗi khi thêm giỏ hàng: " . $conn->error);
-}
-
-// Thêm chi tiết sản phẩm vào giỏ hàng
-foreach ($cart_items as $item) {
-    $product_id = $item['id'] ?? 0;
-    $quantity = $item['quantity'] ?? 1;
-    $size = $item['size'] ?? 'N/A';
-
-    $insert_cart_detail = $conn->prepare("INSERT INTO cart_details (cart_code, product_id, size, quantity) 
-                                          VALUES (?, ?, ?, ?)");
-    $insert_cart_detail->bind_param("sisi", $cart_code, $product_id, $size, $quantity);
-
-    if (!$insert_cart_detail->execute()) {
-        echo "Lỗi khi thêm sản phẩm vào chi tiết giỏ hàng: " . $conn->error;
-    }
-}
 
 // Xử lý thanh toán
 if ($cart_payment === 'COD') {
-    echo "Đặt hàng thành công! Chúng tôi sẽ liên hệ để xác nhận.";
-    $mail = new Mailer();
-    $tieude = "Đặt hàng thành công tại website";
-    $noidung = "<p>Cảm ơn bạn đã đặt hàng tại website của chúng tôi</p>
-            <h4>Đơn hàng của bạn đã được gửi đi với mã đơn hàng là: $cart_code</h4>";
-    $maildathang = $_SESSION['email']; // Email khách hàng
-    echo "Đang gửi email tới: $maildathang <br>";
+    $insert_cart = $conn->prepare("INSERT INTO cart (user_id, cart_code, cart_status, cart_payment, total_amount) 
+                               VALUES (?, ?, ?, ?, ?)");
+    $cart_status = 0; // Mặc định là chưa xử lý
+    $insert_cart->bind_param("isssd", $user_id, $cart_code, $cart_status, $cart_payment, $total_amount);
 
-    $mail->dathanggmail($tieude, $noidung, $maildathang);
-    unset($_SESSION['cart']); // Xóa giỏ hàng sau khi đặt hàng
+    if (!$insert_cart->execute()) {
+        die("Lỗi khi thêm giỏ hàng: " . $conn->error);
+    }
+
+    // Thêm chi tiết sản phẩm vào giỏ hàng
+    foreach ($cart_items as $item) {
+        $product_id = $item['id'] ?? 0;
+        $quantity = $item['quantity'] ?? 1;
+        $size = $item['size'] ?? 'N/A';
+
+        $insert_cart_detail = $conn->prepare("INSERT INTO cart_details (cart_code, product_id, size, quantity) 
+                                          VALUES (?, ?, ?, ?)");
+        $insert_cart_detail->bind_param("sisi", $cart_code, $product_id, $size, $quantity);
+
+        if (!$insert_cart_detail->execute()) {
+            echo "Lỗi khi thêm sản phẩm vào chi tiết giỏ hàng: " . $conn->error;
+        }
+    }
+    include 'formail.php';
 } elseif ($cart_payment === 'VNPAY') {
     include 'handlevnpay.php';
     // vui lòng tham khảo thêm tại code demo
-    $mail = new Mailer();
-    $tieude = "Đặt hàng thành công tại website";
-    $noidung = "<p>Cảm ơn bạn đã đặt hàng tại website của chúng tôi</p>
-            <h4>Đơn hàng của bạn đã được gửi đi với mã đơn hàng là: $cart_code</h4>";
-    $maildathang = $_SESSION['email']; // Email khách hàng
-    echo "Đang gửi email tới: $maildathang <br>";
-
     $mail->dathanggmail($tieude, $noidung, $maildathang);
+} elseif ($cart_payment === 'MOMO') {
+    include 'handlemomo.php'; // Xử lý thanh toán Momo
+}elseif ($cart_payment === 'MOMO-ATM'){
+    include 'handlemomo.php'; // Xử lý thanh toán ZaloPay
 }
-// //<?php
-// session_start();
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
-
-// include 'mail/PHPMailer-master/src/Exception.php';
-// include 'mail/PHPMailer-master/src/PHPMailer.php';
-// include 'mail/PHPMailer-master/src/SMTP.php';
-
-// $mail = new PHPMailer(true);
-
-// try {
-//     $mail->isSMTP();
-//     $mail->Host = 'smtp.gmail.com';
-//     $mail->SMTPAuth = true;
-//     $mail->Username = 'chwhuan17@gmail.com';
-//     $mail->Password = 'zjfc zpuh ipcq enxu';
-//     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-//     $mail->Port = 465;
-//     $maildathang = $_SESSION['email'];
-//     $mail->setFrom('chwhuan17@gmail.com', 'Website');
-//     $mail->addAddress($maildathang);
-
-//     $mail->isHTML(true);
-//     $mail->Subject = 'Content';
-//     $mail->Body = 'New Content';
-
-//     $mail->send();
-//     echo "Email đã được gửi tới: $maildathang";
-// } catch (Exception $e) {
-//     echo "Không thể gửi email. Lỗi: {$mail->ErrorInfo}";
-// }
-
-// // Sử dụng lớp
-
-// ?>

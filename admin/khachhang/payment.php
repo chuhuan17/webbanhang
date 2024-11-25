@@ -81,6 +81,14 @@ include 'header.php';
                             <input type="radio" id="VNPAY" name="payment_method" value="VNPAY">
                             <label for="VNPAY">Thanh toán qua VNPay</label>
                         </div>
+                        <div>
+                            <input type="radio" id="MOMO" name="payment_method" value="MOMO">
+                            <label for="MOMO">Thanh toán qua MOMO</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="MOMO-ATM" name="payment_method" value="MOMO-ATM">
+                            <label for="MOMO-ATM">Thanh toán qua MOMO ATM</label>
+                        </div>
                         <input type="submit" value="Thanh toán" name="redirect" class="btn btn-primary" style="width: 100%; margin-top: 10px;"></input>
                     </form>
                 </div>

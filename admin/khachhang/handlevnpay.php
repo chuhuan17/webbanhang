@@ -84,15 +84,13 @@ if (isset($_POST['redirect'])) {
                 echo "Lỗi khi thêm sản phẩm vào chi tiết giỏ hàng: " . mysqli_error($conn);
             }
         }
-
+        include 'formail.php';
         // Cập nhật tổng tiền giỏ hàng
         $update_cart = "UPDATE cart SET total_amount = '$total_amount' WHERE cart_code = '$cart_code'";
         if (!mysqli_query($conn, $update_cart)) {
             echo "Lỗi khi cập nhật tổng tiền: " . mysqli_error($conn);
         }
     }
-    unset($_SESSION['cart']); // Xóa giỏ hàng tạm thời khỏi session
-
     header('Location: ' . $vnp_Url);
     die();
 } else {
