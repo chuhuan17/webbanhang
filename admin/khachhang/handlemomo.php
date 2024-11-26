@@ -68,7 +68,7 @@ $jsonResult = json_decode($result, true);  // decode json
 
 //Just a example, please check more in there
 $insert_cart = "INSERT INTO cart (user_id, cart_code, cart_status, cart_payment) 
-                VALUES ('$user_id', '$cart_code', '0', '$cart_payment')";
+                VALUES ('$user_id', '$cart_code', '2', '$cart_payment')";
 $order_query = $db->insert($insert_cart);
 // $db->handleSqlError($insert_order);
 // them order detail

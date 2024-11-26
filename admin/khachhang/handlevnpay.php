@@ -61,7 +61,7 @@ $returnData = array(
 if (isset($_POST['redirect'])) {
     $_SESSION['cart_code'] = $cart_code; // Lưu mã đơn hàng vào session
     $insert_cart = "INSERT INTO cart (user_id, cart_code, cart_status, cart_payment) 
-                VALUES ('$user_id', '$cart_code', '0', '$cart_payment')";
+                VALUES ('$user_id', '$cart_code', '2', '$cart_payment')";
     if (!mysqli_query($conn, $insert_cart)) {
         die("Lỗi khi thêm giỏ hàng: " . mysqli_error($conn));
     }

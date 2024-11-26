@@ -20,7 +20,6 @@ if ($start_date && $end_date) {
         FROM cart
         WHERE cart_status = 2 
           AND DATE(cart_date) BETWEEN ? AND ?";
-
     $stmt = $conn->prepare($sql_revenue);
     $stmt->bind_param('ss', $start_date, $end_date); // Bind tham số
     $stmt->execute();

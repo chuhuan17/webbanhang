@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var rowsShown = 8;
-  var rowsTotal = $("#Table div a").length;
+  var rowsTotal = $("#Table div div.card").length;
   var numPages = Math.ceil(rowsTotal / rowsShown);
 
   // Tạo phân aang
