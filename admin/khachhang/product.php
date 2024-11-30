@@ -9,7 +9,8 @@ if ($result_chitiet->num_rows > 0) {
     while ($chitiet = $result_chitiet->fetch_assoc()) {
 ?>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+
         <div class="product">
             <div class="container">
                 <?php
@@ -160,8 +161,8 @@ if ($result_chitiet->num_rows > 0) {
 
 
                             <div class="product-content-right-product-button">
-                                <button name="addcart" type="submit"><i class="fas fa-shopping-cart"></i> Mua Hàng</button>
-                                <button name="add" type="submit"><i class="fa-solid fa-cart-plus"></i> THÊM VÀO GIỎ HÀNG</button>
+                                <button name="addcart" type="submit" style="width: max-content; padding: 10px;"><i class="fas fa-shopping-cart" id="cart" style="margin-right: 5px;"></i> MUA HÀNG</button>
+                                <button name="add" type="submit" style="width: max-content; padding: 10px;"><i class="fa-solid fa-cart-plus" id="cart"></i> THÊM VÀO GIỎ HÀNG</button>
                             </div>
                             <?php if (isset($_GET['added']) && $_GET['added'] == 1): ?>
                                 <script>
@@ -219,8 +220,8 @@ if ($result_chitiet->num_rows > 0) {
             });
         </script>
         </section>
-        < <?php
-        }
+<?php
     }
-    include 'footer.php';
-            ?>
+}
+include 'footer.php';
+?>

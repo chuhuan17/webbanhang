@@ -17,50 +17,61 @@ $stmt->bind_param("s", $searchKeyword);
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
+<!DOCTYPE html>
+<html>
 
-<div class="container">
-    <div class="row">
-        <div class="category-right row">
-            <div class="category-right-top-item">
-                <p style="font-family: 'Arial', sans-serif;">Kết quả tìm kiếm cho từ khóa: <?php echo htmlspecialchars($keyword); ?></p>
-                <div id="Table" class="category-right-content-item">
-                    <?php
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                    ?>
-                        <div class="product-item">
-                            <form method="post" action="cart.php?action=add&id=<?php echo $row["product_id"]; ?>">
-                                <div class="product-image">
-                                    <a href="product.php?product_id=<?php echo $row['product_id']; ?>" style="text-decoration: none; color: inherit;">
-                                        <img src="../uploads/<?php echo htmlspecialchars($row['product_image']); ?>" alt="Product Image" class="img-fluid">
-                                        <h2><?php echo htmlspecialchars($row['product_name']); ?></h2>
-                                        <p><?php echo number_format($row['product_price'], 0, ',', '.') . " VND"; ?></p>
-                                    </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả tìm kiếm</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Kết quả tìm kiếm cho từ khóa: "<?php echo htmlspecialchars($keyword); ?>"</h2>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+            ?>
+                    <div class="col">
+                        <div class="card h-100">
+                            <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="text-decoration-none text-dark">
+                                <img src="../uploads/<?php echo htmlspecialchars($row['product_image']); ?>" class="card-img-top img-fluid" alt="Product Image">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
+                                    <p class="card-text text-danger fw-bold"><?php echo number_format($row['product_price'], 0, ',', '.') . " VND"; ?></p>
                                 </div>
-                            </form>
+                            </a>
                         </div>
-                    <?php
-                        }
-                    } else {
-                        echo "<p>Không tìm thấy sản phẩm nào.</p>";
-                    }
-                    ?>
-                </div>
-            </div>
-
-            <div class="pagination-container" style="display: flex; justify-content: center;">
-                <div class="pagination" id="pagination" style="align-self: center;">
-                    <!-- Phần phân trang sẽ hiển thị ở đây -->
-                </div>
-            </div>
+                    </div>
+            <?php
+                }
+            } else {
+                echo "<p class='text-center text-muted'>Không tìm thấy sản phẩm nào.</p>";
+            }
+            ?>
         </div>
-    </div>
-</div>
 
-<?php
-$stmt->close();
-$conn->close();
-include 'footer.php';
-?>
-<script src="../js/pagination.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Pagination placeholder -->
+        <nav aria-label="Page navigation" class="d-flex justify-content-center mt-4">
+            <ul class="pagination" id="pagination">
+                <!-- Nội dung phân trang -->
+            </ul>
+        </nav>
+    </div>
+
+    <?php
+    $stmt->close();
+    $conn->close();
+    include 'footer.php';
+    ?>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

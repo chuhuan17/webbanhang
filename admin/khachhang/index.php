@@ -84,9 +84,9 @@ $db = new Database();
                 }
                 ?>
             </div>
-            <div class="text-center mt-3">
+            <!-- <div class="text-center mt-3">
                 <a href="productremarkable.php" class="btn btn-outline-primary">Xem tất cả</a>
-            </div>
+            </div> -->
         </section>
 
         <!-- Sản phẩm theo thương hiệu -->
@@ -98,10 +98,10 @@ $db = new Database();
             while ($row_brand = $result_brands->fetch_assoc()) {
         ?>
                 <section id="product-slider" class="mb-5">
-                    <h2 class="text-center text-success mb-4"><?php echo htmlspecialchars($row_brand['brand_name']); ?></h2>
+                    <h2 class="text-center text-primary mb-4"><?php echo htmlspecialchars($row_brand['brand_name']); ?></h2>
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <?php
-                        $query_products = "SELECT * FROM products WHERE brand_id = ?";
+                        $query_products = "SELECT * FROM products WHERE brand_id = ? LIMIT 4";
                         $stmt = $db->conn->prepare($query_products);
                         $stmt->bind_param("i", $row_brand['brand_id']);
                         $stmt->execute();
@@ -128,7 +128,7 @@ $db = new Database();
                         ?>
                     </div>
                     <div class="text-center mt-3">
-                        <a href="products_by_brand.php?brand_id=<?php echo $row_brand['brand_id']; ?>" class="btn btn-outline-success">Xem tất cả</a>
+                        <a href="products_by_brand.php?brand_id=<?php echo $row_brand['brand_id']; ?>" class="btn btn-outline-primary">Xem tất cả</a>
                     </div>
                 </section>
         <?php
