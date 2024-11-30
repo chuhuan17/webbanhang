@@ -7,7 +7,18 @@ $conn = $db->conn;
     <div class="row">
         <div class="col-12">
             <h1 class="text-center my-4">Hàng mới về</h1>
-            <div class="row" id = "Table">
+            <div class="filter-section text-center my-4">
+                <label for="priceFilter" class="mr-2">Lọc theo giá:</label>
+                <select id="priceFilter" class="form-control d-inline-block w-auto">
+                    <option value="all">Tất cả</option>
+                    <option value="0-100000">Dưới 100.000 VND</option>
+                    <option value="100000-500000">100.000 - 500.000 VND</option>
+                    <option value="500000-1000000">500.000 - 1.000.000 VND</option>
+                    <option value="1000000-">Trên 1.000.000 VND</option>
+                </select>
+            </div>
+
+            <div class="row" id="Table">
                 <?php
                 // Truy vấn dữ liệu sản phẩm
                 $query = "SELECT products.*, brands.brand_name 
@@ -47,11 +58,9 @@ $conn = $db->conn;
         </div>
     </div>
     <div class="row">
-        <div class="col-12 text-center">
-            <nav>
-                <ul class="pagination justify-content-center" id="pagination"></ul>
-            </nav>
-        </div>
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
     </div>
 </div>
 
