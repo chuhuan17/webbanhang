@@ -58,6 +58,8 @@ if ($cart_payment === 'COD') {
         }
     }
     include 'formail.php';
+    header( "Location: thanks.php" );
+
 } elseif ($cart_payment === 'VNPAY') {
     include 'handlevnpay.php';
     // vui lòng tham khảo thêm tại code demo

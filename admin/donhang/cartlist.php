@@ -49,7 +49,7 @@ $show_cart = $cart->show_cart();
                                     echo "Đã duyệt";
                                     break;
                                 case '2':
-                                    echo "Đã giao";
+                                    echo "Đã thanh toán";
                                     break;
                                 case '3':
                                     echo "Đã hủy";

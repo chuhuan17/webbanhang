@@ -1,9 +1,7 @@
 <?php 
-session_start();
-include "../database/connectdb.php";
-include "../database/database.php";
-include "../login/user.php";
 
+include "../login/user.php";
+include "../khachhang/header.php";
 $db = new Database();
 $conn = $db->conn; // Sử dụng kết nối mysqli
 $txt_erro = '';
@@ -80,3 +78,6 @@ if (isset($_POST['login'])) {
 </div>
 </body>
 </html>
+<?php
+include "../khachhang/footer.php";
+?>

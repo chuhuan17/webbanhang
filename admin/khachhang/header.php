@@ -41,7 +41,6 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="../styles_header.css">
     <link rel="stylesheet" type="text/css" href="../styles_admin.css">
-    <link rel="stylesheet" href="../styles_product.css" type="text/css" media="screen" />
 </head>
 <style>
     .badge {
@@ -73,7 +72,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
             <a href=""><img src="../../img/jp.webp" alt=""></a>
         </div>
         <div class="menu">
-            <li><a href="index.php">Trang chủ</a></li>
+            <li><a href="../khachhang/index.php">Trang chủ</a></li>
             <li><a href="productlist.php">Sản phẩm</a>
                 <ul class="sub-menu">
                     <?php
@@ -87,12 +86,12 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
                     ?>
                 </ul>
             </li>
-            <li><a href="">Bộ Sưu Tập</a></li>
+            <li><a href="../khachhang/feedback.php">Liên hệ</a></li>
             <li><a href="./about.html">Về Chúng Tôi</a></li>
         </div>
         <div class="other">
             <li>
-                <form action="search.php" method="post" style="position: relative;">
+                <form action="../khachhang/search.php" method="post" style="position: relative;">
                     <input type="text" name="keyword" placeholder="Tìm kiếm">
                     <button type="submit" name="search" value="search"><i class="fas fa-search"></i></button>
                 </form>
@@ -119,7 +118,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 0)) {
 
             <?php else: ?>
                 <li><a class="fa fa-user" href="../login/login.php" style="color: #333;"></a></li>
-                <li><a class="fa fa-shopping-bag" href="cart.php"></a></li>
+                <li><a class="fa fa-shopping-bag" href="../khachhang/cart.php"></a></li>
             <?php endif; ?>
         </div>
     </header>

@@ -11,6 +11,15 @@ $db = new Database();
     <title>Trang chủ</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 30px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -137,10 +146,10 @@ $db = new Database();
         ?>
     </div>
 
-    <?php include 'footer.php'; ?>
+    
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html>
+</html><?php include 'footer.php'; ?>

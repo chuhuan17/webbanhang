@@ -7,19 +7,24 @@ include 'header.php';
 <section class="cart">
     <div class="container">
         <div class="cart-top-wrap">
-            <div class="cart-top">
-                <div class="cart-top-cart current">
-                    <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+            
+                <div class="cart-top">
+                <?php if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
+                    <div class="cart-top-cart current">
+                        <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="cart-top-cart ">
+                        <a href="ship.php"><i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                    <div class="cart-top-cart">
+                        <a href="payment.php"><i class="fas fa-credit-card"></i></a>
+                    </div>
+                    <?php } ?>
                 </div>
-                <div class="cart-top-cart ">
-                    <a href="ship.php"><i class="fas fa-map-marker-alt"></i></a>
-                </div>
-                <div class="cart-top-cart">
-                <a href="payment.php"><i class="fas fa-credit-card"></i></a>
-                </div>
-            </div>
+           
         </div>
     </div>
+
     <div class="container">
         <div class="cart-content" style="display: flex;">
             <div class="cart-content-left">

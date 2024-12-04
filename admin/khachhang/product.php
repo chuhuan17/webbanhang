@@ -8,9 +8,7 @@ $result_chitiet = $db->conn->query($query_chitiet);
 if ($result_chitiet->num_rows > 0) {
     while ($chitiet = $result_chitiet->fetch_assoc()) {
 ?>
-
-        
-
+<link rel="stylesheet" href="../styles_product.css" type="text/css" media="screen" />
         <div class="product">
             <div class="container">
                 <?php

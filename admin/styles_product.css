@@ -59,7 +59,7 @@ a {
     position: absolute;
     width: 150px;
     border: 1px solid #ccc;
-    padding: 10px 0px 10px 20px;
+    /* padding: 10px 0px 10px 20px; */
     visibility: hidden;
     top: 60px;
     transition: 0.3s;
@@ -77,8 +77,8 @@ a {
 }
 
 .menu li a {
-    font-size: 12px;
-    font-weight: bold !important;
+    /* font-size: 17px;
+    font-weight: bold !important; */
     display: block;
     line-height: 20px;
     transition: color 0.3s ease;
