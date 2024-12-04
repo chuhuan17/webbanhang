@@ -42,9 +42,20 @@ $result = $stmt->get_result();
                             <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="text-decoration-none text-dark">
                                 <img src="../uploads/<?php echo htmlspecialchars($row['product_image']); ?>" class="card-img-top img-fluid" alt="Product Image">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                    <p class="card-text text-danger fw-bold"><?php echo number_format($row['product_price'], 0, ',', '.') . " VND"; ?></p>
-                                </div>
+                                        <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
+                                        <span style="text-decoration: line-through; color: black; font-weight: bold;">
+                                            <?php echo number_format($row['product_price'], 0, ',', '.') . ' VND'; ?>
+                                        </span><br>
+                                        <span style="font-weight: bold; font-size: 1.2em; color: #f2231d;">
+                                            <?php echo number_format($row['price_sale'], 0, ',', '.') . ' VND'; ?>
+                                        </span>
+                                        <br>
+                                        <small style="color: green; font-weight: bold;">
+                                            Giảm <?php echo $row['product_sale']; ?>%
+                                        </small>
+                                        <br>
+                                        <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-primary">Xem chi tiết</a>
+                                    </div>
                             </a>
                         </div>
                     </div>

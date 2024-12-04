@@ -52,7 +52,8 @@ if ($cart_payment === 'COD') {
         $insert_cart_detail = $conn->prepare("INSERT INTO cart_details (cart_code, product_id, size, quantity) 
                                           VALUES (?, ?, ?, ?)");
         $insert_cart_detail->bind_param("sisi", $cart_code, $product_id, $size, $quantity);
-
+        $update_quantity = "UPDATE products SET product_quantity = product_quantity - " . $quantity . "    WHERE product_id = '" . $product_id . "'";
+        $db->update($update_quantity);
         if (!$insert_cart_detail->execute()) {
             echo "Lỗi khi thêm sản phẩm vào chi tiết giỏ hàng: " . $conn->error;
         }

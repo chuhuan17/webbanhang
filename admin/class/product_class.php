@@ -16,6 +16,8 @@ class product
         $remarkable = $_POST['remarkable'];
         $brand_id = $_POST['brand_id'];
         $product_price = $_POST['product_price'];
+        $product_sale = $_POST['product_sale'];
+        $product_quantity = $_POST['product_quantity'];
         $product_desc = $_POST['product_description'];
         $product_color_name = $_POST['product_color_name']; // Lấy tên màu từ form
         // Xử lý ảnh màu sản phẩm
@@ -31,6 +33,8 @@ class product
                 product_name,
                 brand_id,
                 product_price,
+                product_sale,
+                product_quantity,
                 product_description,
                 product_color_name,
                 product_color_image,
@@ -40,6 +44,8 @@ class product
                 '$product_name',
                 '$brand_id',
                 '$product_price',
+                '$product_sale',
+                '$product_quantity',
                 '$product_desc',
                 '$product_color_name',
                 '$color_image',
@@ -120,7 +126,7 @@ class product
         $result = $this->db->select($query);
         return $result;
     }
-    public function update_product($product_id, $product_name, $brand_id, $product_size, $product_price, $product_description, $product_color_name, $product_color_image, $product_image, $product_img_desc)
+    public function update_product($product_id, $product_name, $brand_id, $product_size, $product_price,$product_sale,$product_quantity, $product_description, $product_color_name, $product_color_image, $product_image, $product_img_desc)
     {
         // Convert mảng kích thước thành chuỗi nếu cần lưu vào DB
         $sizes = implode(',', $product_size);
@@ -136,6 +142,8 @@ class product
                 brand_id = '$brand_id',
                 product_size = '$sizes',
                 product_price = '$product_price',
+                product_sale = '$product_sale',
+                product_quantity = '$product_quantity,
                 product_description = '$product_description',
                 product_color_name = '$product_color_name',
                 product_color_image = '$color_image_name',

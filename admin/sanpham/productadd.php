@@ -83,6 +83,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Giá sản phẩm -->
             <label for="product_price">Giá sản phẩm <span style="color: red;">*</span></label>
             <input name="product_price" required type="number" placeholder="Nhập giá sản phẩm" min="0" >
+            
+            <!-- Khuyễn mãi -->
+            <label for="product_sale">Khuyễn mãi <span style="color: red;">*</span></label>
+            <input name="product_sale" required type="number" placeholder="Nhập khuyễn mãi" min="0" >
+
+            <!-- Số lượng sản phẩm -->
+            <label for="product_quantity">Số lượng sản phẩm <span style="color: red;">*</span></label>
+            <input name="product_quantity" required type="number" placeholder="Nhập số lượng" min="0" >
 
             <!-- Mô tả sản phẩm -->
             <label for="product_description">Mô tả sản phẩm</label>

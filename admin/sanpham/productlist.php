@@ -41,6 +41,8 @@ $show_product = $product->show_product();
                 <th>Loại sản phẩm</th> <!-- Thêm cột này -->
                 <th>Tên sản phẩm</th>
                 <th>Giá</th>
+                <th>Khuyễn mãi</th>
+                <th>Số lượng</th>
                 <th>Mô tả</th>
                 <th>Màu sắc</th>
                 <th>Ảnh màu sắc</th>
@@ -60,6 +62,8 @@ $show_product = $product->show_product();
                         <td><?php echo $result['brand_name'] ?></td> <!-- Hiển thị loại sản phẩm (brand_name) -->
                         <td><?php echo $result['product_name'] ?></td>
                         <td><?php echo $result['product_price'] ?></td>
+                        <td><?php echo $result['product_sale'] ?></td>
+                        <td><?php echo $result['product_quantity'] ?></td>
                         <td><?php echo $result['product_description'] ?></td>
                         <td><?php echo $result['product_color_name'] ?></td>
                         <td><img src="../uploads/<?php echo $result['product_color_image'] ?>" alt="Product Image" width="50" height="50"></td> <!-- Hiển thị ảnh sản phẩm -->

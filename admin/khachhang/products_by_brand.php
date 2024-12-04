@@ -46,9 +46,20 @@ if (isset($_GET['brand_id'])) {
                                     <img src="../uploads/<?php echo htmlspecialchars($row['product_image']); ?>" class="card-img-top" alt="Product Image">
                                     <div class="card-body text-center">
                                         <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                        <p class="card-text text-success fw-bold"><?php echo number_format($row['product_price'], 0, ',', '.'); ?> VND</p>
+                                        <span style="text-decoration: line-through; color: black; font-weight: bold;">
+                                            <?php echo number_format($row['product_price'], 0, ',', '.') . ' VND'; ?>
+                                        </span><br>
+                                        <span style="font-weight: bold; font-size: 1.2em; color: #f2231d;">
+                                            <?php echo number_format($row['price_sale'], 0, ',', '.') . ' VND'; ?>
+                                        </span>
+                                        <br>
+                                        <small style="color: green; font-weight: bold;">
+                                            Giảm <?php echo $row['product_sale']; ?>%
+                                        </small>
+                                        <br>
                                         <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-primary">Xem chi tiết</a>
                                     </div>
+
                                 </div>
                             </div>
                     <?php
