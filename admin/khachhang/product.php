@@ -124,6 +124,8 @@ if ($result_chitiet->num_rows > 0) {
                                     <i class="fa-solid fa-cart-plus me-2"></i>Thêm vào giỏ hàng
                                 </button>
                             </div>
+
+                            
                         </div>
                     </div>
                 </form>

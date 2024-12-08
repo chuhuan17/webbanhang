@@ -40,7 +40,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="contact-form">
-                    <form action="submit_contact.php" method="post">
+                    <form action="submit_feedback.php" method="post">
                         <div class="form-group">
                             <label for="name">Tên của bạn</label>
                             <input type="text"class="form-control" id="name" name="name" required />
