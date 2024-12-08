@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 08, 2024 lúc 04:28 AM
+-- Thời gian đã tạo: Th12 08, 2024 lúc 07:42 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -72,7 +72,8 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `cart_code`, `cart_status`, `cart_date
 (7, 19, '6189', 0, '2024-12-02 23:58:31', 0.00, 'COD'),
 (8, 19, '1965', 0, '2024-12-04 23:05:04', 1190000.00, 'COD'),
 (9, 19, '1956', 0, '2024-12-04 23:06:39', 5950000.00, 'COD'),
-(10, 19, '8044', 0, '2024-12-04 23:06:56', 5950000.00, 'COD');
+(10, 19, '8044', 0, '2024-12-04 23:06:56', 5950000.00, 'COD'),
+(11, 19, '9172', 0, '2024-12-08 11:36:46', 15020000.00, 'COD');
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,32 @@ INSERT INTO `cart_details` (`cart_details_id`, `cart_code`, `product_id`, `quant
 (3, '3776', 44, 1, 'XL'),
 (4, '2667', 44, 1, 'L'),
 (5, '1965', 39, 1, 'S'),
-(6, '8044', 39, 5, 'S');
+(6, '8044', 39, 5, 'S'),
+(7, '9172', 40, 2, 'S'),
+(8, '9172', 40, 2, 'L'),
+(9, '9172', 44, 1, 'S'),
+(10, '9172', 40, 3, 'M');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `submitted_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
+(2, '1', '1@1', '1', '2024-12-08 04:48:29');
 
 -- --------------------------------------------------------
 
@@ -147,26 +173,27 @@ CREATE TABLE `products` (
   `product_color_image` varchar(255) DEFAULT NULL,
   `product_color_name` varchar(255) DEFAULT NULL,
   `remarkable` tinyint(1) DEFAULT 0,
-  `price_sale` decimal(10,2) GENERATED ALWAYS AS (`product_price` - `product_price` * `product_sale` / 100) STORED
+  `price_sale` decimal(10,2) GENERATED ALWAYS AS (`product_price` - `product_price` * `product_sale` / 100) STORED,
+  `product_size` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_sale`, `product_quantity`, `product_image`, `brand_id`, `created_at`, `updated_at`, `product_color_image`, `product_color_name`, `remarkable`) VALUES
-(26, 'Chân váy bút chì Lam cobalt', '\r\nDòng sản phẩm	You\r\nNhóm sản phẩm	Zuýp\r\nKiểu dáng	Bút chì\r\nĐộ dài	Qua gối\r\nHọa tiết	Trơn\r\nChất liệu	Tweed', 1190000.00, 11, 50, 'chân váy bút chì lam cobalt.webp', 13, '2024-10-31 15:11:23', '2024-12-04 16:00:30', 'xanh dương đậm.png', 'Xanh dương ', 0),
-(27, 'Đầm lụa xòe tay dài Hoa Pháp', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Đầm\r\nCổ áo	Cổ tròn\r\nTay áo	Tay dài\r\nKiểu dáng	Đầm xòe\r\nĐộ dài	Ngang bắp\r\nHọa tiết	Hoa,Họa tiết khác\r\nChất liệu	Lụa', 2290000.00, 12, 50, 'Đầm lụa xòe tay dài Hoa Pháp.webp', 12, '2024-10-31 15:33:13', '2024-12-04 16:00:32', 'họa tiết đen.png', 'Họa tiết ', 0),
-(28, 'Chân váy lụa xòe Hoa Pháp', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Zuýp\r\nKiểu dáng	Xòe\r\nĐộ dài	Ngang bắp\r\nHọa tiết	Hoa\r\nChất liệu	Lụa', 1190000.00, 13, 50, 'Chân váy lụa xòe Hoa Pháp.webp', 13, '2024-11-01 00:58:31', '2024-12-04 16:00:33', 'Họa tiết xanh tím than.png', 'Họa tiết xanh tím ', 0),
-(29, 'Chân váy lụa xòe Hoa Pháp', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Zuýp\r\nKiểu dáng	Xòe\r\nĐộ dài	Ngang bắp\r\nHọa tiết	Hoa\r\nChất liệu	Lụa', 1190000.00, 14, 50, 'Chân váy lụa xòe Hoa Pháp.webp', 13, '2024-11-01 00:58:45', '2024-12-04 16:00:34', 'Họa tiết xanh tím than.png', 'Họa tiết xanh tím ', 0),
-(33, 'Áo Gile cổ V Dreamy', '1234', 1090000.00, 15, 50, '1731248938_2deaf42598c03e52ce5ea03b719b2d6c.webp', 10, '2024-11-10 14:25:47', '2024-12-04 16:00:35', '1731248938_001.png', 'Trắng', 0),
-(35, 'Chân váy Khaki xếp ly', '', 1090000.00, 16, 50, '0bdbc3a8914938b6634499d2ce62768f.webp', 13, '2024-11-10 14:38:48', '2024-12-04 16:00:36', '001.png', 'Trắng', 1),
-(39, 'Áo sơ mi Tuysi Peplum', '', 1190000.00, 17, 45, '9769693273954987ecba8cc04d916484.webp', 10, '2024-11-10 14:46:06', '2024-12-04 16:06:56', '001.png', 'Trắng', 0),
-(40, 'Đầm lụa chấm bi Lucille', '', 1790000.00, 18, 50, '43b404093e20713a23bfb10cea798ab6.webp', 12, '2024-11-10 14:48:08', '2024-12-04 16:00:40', '049.png', 'Đen', 1),
-(44, 'Đầm ôm cổ kiểu Pauline', '', 2490000.00, 19, 50, 'a2e5f733eb62034ff70bcd9015b09cb8.webp', 12, '2024-11-10 14:58:38', '2024-12-04 16:00:41', '003.png', 'Be', 1),
-(45, 'Đầm xòe Rosalie', '', 2390000.00, 20, 50, '1cc773085f22bcda0562d5877edb1a9a.webp', 12, '2024-11-10 15:00:27', '2024-12-04 16:00:43', '049.png', 'Đen', 0),
-(46, 'Đầm xòe Foral Lụa Midi', '', 1890000.00, 1, 50, '1e86e5194b950559f4ee6e0e6005e730.webp', 12, '2024-11-10 15:01:37', '2024-12-04 16:00:44', 'h15.png', 'Hồng kẹo', 1),
-(47, '1', '1', 1.00, 1, 1, 'about.webp', 13, '2024-12-04 15:13:35', '2024-12-04 15:13:35', 'about.webp', '1', 0);
+INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_sale`, `product_quantity`, `product_image`, `brand_id`, `created_at`, `updated_at`, `product_color_image`, `product_color_name`, `remarkable`, `product_size`) VALUES
+(26, 'Chân váy bút chì Lam cobalt', '\r\nDòng sản phẩm	You\r\nNhóm sản phẩm	Zuýp\r\nKiểu dáng	Bút chì\r\nĐộ dài	Qua gối\r\nHọa tiết	Trơn\r\nChất liệu	Tweed', 1190000.00, 11, 50, 'chân váy bút chì lam cobalt.webp', 13, '2024-10-31 15:11:23', '2024-12-04 16:00:30', 'xanh dương đậm.png', 'Xanh dương ', 0, 0),
+(27, 'Đầm lụa xòe tay dài Hoa Pháp', 'Dòng sản phẩm	Ladies\r\nNhóm sản phẩm	Đầm\r\nCổ áo	Cổ tròn\r\nTay áo	Tay dài\r\nKiểu dáng	Đầm xòe\r\nĐộ dài	Ngang bắp\r\nHọa tiết	Hoa,Họa tiết khác\r\nChất liệu	Lụa', 2290000.00, 12, 50, 'Đầm lụa xòe tay dài Hoa Pháp.webp', 12, '2024-10-31 15:33:13', '2024-12-04 16:00:32', 'họa tiết đen.png', 'Họa tiết ', 0, 0),
+(28, 'Chân váy lụa xòe Hoa Pháp', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Zuýp\r\nKiểu dáng	Xòe\r\nĐộ dài	Ngang bắp\r\nHọa tiết	Hoa\r\nChất liệu	Lụa', 1190000.00, 13, 50, 'Chân váy lụa xòe Hoa Pháp.webp', 13, '2024-11-01 00:58:31', '2024-12-04 16:00:33', 'Họa tiết xanh tím than.png', 'Họa tiết xanh tím ', 0, 0),
+(29, 'Chân váy lụa xòe Hoa Pháp', 'Dòng sản phẩm	You\r\nNhóm sản phẩm	Zuýp\r\nKiểu dáng	Xòe\r\nĐộ dài	Ngang bắp\r\nHọa tiết	Hoa\r\nChất liệu	Lụa', 1190000.00, 14, 50, 'Chân váy lụa xòe Hoa Pháp.webp', 13, '2024-11-01 00:58:45', '2024-12-04 16:00:34', 'Họa tiết xanh tím than.png', 'Họa tiết xanh tím ', 0, 0),
+(33, 'Áo Gile cổ V Dreamy', '1234', 1090000.00, 15, 50, '1731248938_2deaf42598c03e52ce5ea03b719b2d6c.webp', 10, '2024-11-10 14:25:47', '2024-12-04 16:00:35', '1731248938_001.png', 'Trắng', 0, 0),
+(35, 'Chân váy Khaki xếp ly', '', 1090000.00, 16, 50, '0bdbc3a8914938b6634499d2ce62768f.webp', 13, '2024-11-10 14:38:48', '2024-12-04 16:00:36', '001.png', 'Trắng', 1, 0),
+(39, 'Áo sơ mi Tuysi Peplum', '', 1190000.00, 17, 45, '9769693273954987ecba8cc04d916484.webp', 10, '2024-11-10 14:46:06', '2024-12-04 16:06:56', '001.png', 'Trắng', 0, 0),
+(40, 'Đầm lụa chấm bi Lucille', '', 1790000.00, 18, 43, '43b404093e20713a23bfb10cea798ab6.webp', 12, '2024-11-10 14:48:08', '2024-12-08 04:36:46', '049.png', 'Đen', 1, 0),
+(44, 'Đầm ôm cổ kiểu Pauline', '', 2490000.00, 19, 49, 'a2e5f733eb62034ff70bcd9015b09cb8.webp', 12, '2024-11-10 14:58:38', '2024-12-08 04:36:46', '003.png', 'Be', 1, 0),
+(45, 'Đầm xòe Rosalie', '', 2390000.00, 20, 50, '1cc773085f22bcda0562d5877edb1a9a.webp', 12, '2024-11-10 15:00:27', '2024-12-04 16:00:43', '049.png', 'Đen', 0, 0),
+(46, 'Đầm xòe Foral Lụa Midi', '', 1890000.00, 1, 50, '1e86e5194b950559f4ee6e0e6005e730.webp', 12, '2024-11-10 15:01:37', '2024-12-04 16:00:44', 'h15.png', 'Hồng kẹo', 1, 0),
+(47, '1', '1', 1.00, 1, 2, 'about.webp', 13, '2024-12-04 15:13:35', '2024-12-08 06:22:09', 'about.webp', '1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -391,7 +418,8 @@ CREATE TABLE `shipping` (
 --
 
 INSERT INTO `shipping` (`shipping_id`, `name`, `phone`, `address`, `note`, `user_id`) VALUES
-(1, 'Chử Trung Huân', '0387102703', 'Lâm Thao', 'Giao nhanh nhé', 19);
+(1, '1', '1', '1', '1', 19),
+(2, '1', '1', '1', '1', 0);
 
 -- --------------------------------------------------------
 
@@ -475,6 +503,12 @@ ALTER TABLE `cart_details`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- Chỉ mục cho bảng `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `momo`
 --
 ALTER TABLE `momo`
@@ -535,13 +569,19 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `cart_details`
 --
 ALTER TABLE `cart_details`
-  MODIFY `cart_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cart_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT cho bảng `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `momo`
@@ -571,7 +611,7 @@ ALTER TABLE `product_sizes`
 -- AUTO_INCREMENT cho bảng `shipping`
 --
 ALTER TABLE `shipping`
-  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
