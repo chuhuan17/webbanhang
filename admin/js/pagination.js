@@ -64,21 +64,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Lọc sản phẩm theo giá
   function filterProductsByPrice() {
     const value = priceFilter.value;
+    console.log("Lọc theo giá trị:", value);
 
     filteredProducts = products.filter((product) => {
       const priceText = product
-        .querySelector(".card-text")
-        .textContent.replace(/[^0-9]/g, "");
+        .querySelector("span:nth-of-type(2)")
+        .textContent.replace(/\./g, "")
+        .replace(/[^0-9]/g, "");
       const price = parseInt(priceText, 10);
+
+      console.log("Giá sản phẩm:", price);
 
       if (value === "all") return true;
 
       const [min, max] = value.split("-");
-      if (!max) return price >= parseInt(min, 10); // Trên giá trị tối thiểu
-      return price >= parseInt(min, 10) && price <= parseInt(max, 10); // Trong khoảng giá
+      if (!max) return price >= parseInt(min, 10);
+      return price >= parseInt(min, 10) && price <= parseInt(max, 10);
     });
 
-    // Cập nhật phân trang và hiển thị
+    console.log("Sản phẩm sau khi lọc:", filteredProducts);
+
     createPagination(filteredProducts);
   }
 
