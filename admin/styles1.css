@@ -1161,9 +1161,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .product img {
-    width: 250px;
-    height: 368px;
-    object-fit: cover; /* Giữ tỷ lệ ảnh */
+    width: 400px;
+    height: auto;
+    object-fit: cover;
 }
 
 /* Nút điều hướng */

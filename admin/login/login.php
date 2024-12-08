@@ -27,8 +27,10 @@ if (isset($_POST['login'])) {
         // Chuyển hướng dựa trên vai trò
         if ($result['role'] === 1) {
             header("Location: ../sanpham/productlist.php"); // Chuyển đến trang quản lý nếu là admin
-        } else {
-            header("Location: ../khachhang/index.php"); // Chuyển đến trang khách hàng nếu là user
+        } else if ($result['role'] == 0 && isset($_SESSION['cart'])  )  {
+            header("Location: ../khachhang/cart.php"); // Chuyển đến trang khách hàng nếu là khách hàng
+        }else{
+            header("Location: ../khachhang/index.php");
         }
         exit;
     } else {

@@ -4,11 +4,10 @@ include 'header.php';
 
 <!---------------------- Cart  --------------------------->
 
-<section class="cart">
+<section class="cart py-5">
     <div class="container">
         <div class="cart-top-wrap">
-            
-                <div class="cart-top">
+            <div class="cart-top">
                 <?php if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
                     <div class="cart-top-cart current">
                         <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
@@ -19,9 +18,8 @@ include 'header.php';
                     <div class="cart-top-cart">
                         <a href="payment.php"><i class="fas fa-credit-card"></i></a>
                     </div>
-                    <?php } ?>
-                </div>
-           
+                <?php } ?>
+            </div>
         </div>
     </div>
 
@@ -90,12 +88,21 @@ include 'header.php';
                     <p>Bạn sẽ được miễn phí ship khi đơn hàng có tổng giá trị 400,000 đ</p>
                     <p style="color: red; font-weight: bold;">Mua thêm 110,000 đ để được miễn phí ship</p>
                     <?php if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { ?>
-                        <div class="cart-content-right-button">
-                            <a href="ship.php" class="btn-order" style="padding: 10px 20px; background-color: #ff6f61; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
-                                Đặt hàng
-                            </a>
-                        </div>
-                    <?php } ?>
+                        <?php
+                        if (isset($_SESSION['user_id'])  && !empty($_SESSION['user_id'])) {
+                        ?>
+                            <div class="cart-content-right-button">
+                                <a href="ship.php" class="btn-order btn btn-primary btn-lg" style="padding: 10px 20px; background-color: #0d6efd; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+                                    Đặt hàng
+                                </a>
+                            </div>
+                        <?php }else{?>
+                            <div class="cart-content-right-button">
+                                <a href="../login/login.php" class="btn-order" style="padding: 10px 20px; background-color: #0d6efd; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+                                    Đăng nhập để đặt hàng
+                                </a>
+                            </div>
+                    <?php }} ?>
                 </div>
             </div>
         </div>

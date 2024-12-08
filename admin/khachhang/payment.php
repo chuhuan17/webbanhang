@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-<section class="cart">
+<section class="cart py-5">
     <div class="container">
         <div class="cart-top-wrap">
             <div class="cart-top">
