@@ -10,6 +10,8 @@ if ($result_chitiet->num_rows > 0) {
 ?>
         <link rel="stylesheet" href="../styles_product.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+
         <style>
             a {
                 text-decoration: none;
@@ -35,7 +37,7 @@ if ($result_chitiet->num_rows > 0) {
                             <!-- Ảnh lớn -->
                             <div class="flex-grow-1 me-3">
                                 <img src="../uploads/<?php echo $chitiet['product_image']; ?>"
-                                    class="img-fluid border rounded w-100 h-100"
+                                    class="img-fluid  rounded w-100 h-100"
                                     style="object-fit: contain; max-height: 500px;"
                                     alt="Product Image">
                             </div>
@@ -125,13 +127,95 @@ if ($result_chitiet->num_rows > 0) {
                                 </button>
                             </div>
 
-                            
+                            <!-- Phần chi tiết sản phẩm -->
+                            <!-- Phần chi tiết sản phẩm -->
+                            <div class="mb-3">
+                                <h5 class="fw-bold">Chi tiết sản phẩm:</h5>
+                                <div class="collapse" id="product-details">
+                                    <?php echo nl2br(htmlspecialchars($chitiet['product_description'])); ?>
+                                </div>
+                                <button class="btn btn-link p-0 text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#product-details" aria-expanded="false" aria-controls="product-details" id="toggle-button">
+                                    Xem thêm
+                                </button>
+                            </div>
+
+                            <script>
+                                // Khởi tạo đối tượng Collapse của Bootstrap
+                                var collapseElement = new bootstrap.Collapse(document.getElementById('product-details'), {
+                                    toggle: false // Đảm bảo không tự động mở khi trang tải
+                                });
+
+                                var toggleButton = document.getElementById('toggle-button');
+
+                                // Lắng nghe sự kiện Bootstrap để thay đổi văn bản của nút khi mở/thu gọn
+                                collapseElement._element.addEventListener('shown.bs.collapse', function() {
+                                    toggleButton.textContent = 'Thu gọn';
+                                    toggleButton.setAttribute('aria-expanded', 'true');
+                                });
+
+                                collapseElement._element.addEventListener('hidden.bs.collapse', function() {
+                                    toggleButton.textContent = 'Xem thêm';
+                                    toggleButton.setAttribute('aria-expanded', 'false');
+                                });
+                            </script>
+
+
+
                         </div>
                     </div>
                 </form>
+                <!-- Hiển thị sản phẩm cùng loại -->
+                <div class="related-products py-5">
+                    <div class="container">
+                        <h2 class="h5 mb-4">Sản phẩm cùng loại</h2>
+                        <div class="row">
+                            <?php
+                            // Truy vấn lấy sản phẩm cùng loại
+                            $query_related = "
+                                SELECT * 
+                                FROM products 
+                                WHERE brand_id = '{$chitiet['brand_id']}' 
+                                AND product_id != '$product_id'
+                                LIMIT 4
+                                ";
+                            $result_related = $db->conn->query($query_related);
+
+                            if ($result_related->num_rows > 0) {
+                                while ($related = $result_related->fetch_assoc()) {
+                            ?>
+                                    <div class="col-md-3">
+                                        <div class="card mb-4 shadow-sm">
+                                            <img src="../uploads/<?php echo $related['product_image']; ?>"
+                                                class="card-img-top"
+                                                alt="Product Image"
+                                                style="width: 100%; height: 250px; object-fit: contain;">
+                                            <div class="card-body">
+                                                <h5 class="card-title h6">
+                                                    <a href="productdetail.php?product_id=<?php echo $related['product_id']; ?>" class="text-dark">
+                                                        <?php echo htmlspecialchars($related['product_name']); ?>
+                                                    </a>
+                                                </h5>
+                                                <p class="text-danger fw-bold">
+                                                    <?php echo number_format($related['product_price'], 0, ',', '.') . " VND"; ?>
+                                                </p>
+                                                <a href="product.php?product_id=<?php echo $related['product_id']; ?>"
+                                                    class="btn btn-primary btn-sm w-100">Xem chi tiết</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php
+                                }
+                            } else {
+                                echo '<p class="text-muted">Không có sản phẩm cùng loại.</p>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
-
         <script>
             const minusBtn = document.querySelector('.minus');
             const plusBtn = document.querySelector('.plus');
@@ -151,7 +235,7 @@ if ($result_chitiet->num_rows > 0) {
                 }
             });
         </script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <?php
     }
 }
