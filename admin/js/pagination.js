@@ -67,8 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     filteredProducts = products.filter((product) => {
       const priceText = product
-        .querySelector(".card-text")
-        .textContent.replace(/[^0-9]/g, "");
+        .querySelector("span:nth-of-type(2)")
+        .textContent.replace(/\./g, "") // Loại bỏ dấu chấm
+        .replace(/[^0-9]/g, ""); // Loại bỏ ký tự không phải số
+
       const price = parseInt(priceText, 10);
 
       if (value === "all") return true;
