@@ -31,6 +31,12 @@ if (isset($_GET['act']) && $_GET['act'] == 'logout') {
                     </ul>
                 </li>
                 <li class="has-submenu">
+                    <a href="">Quản lý hàng tồn kho</a>
+                    <ul class="submenu">
+                        <li><a href="../hangtonkho/product_quantitylist.php">Danh sách hàng tồn kho</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
                     <a href="">Quản lý người dùng</a>
                     <ul class="submenu">
                         <li><a href="../user/userlist.php">Danh sách người dùng</a></li>

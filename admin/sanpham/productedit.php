@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $brand_id = $_POST['brand_id'];
     $product_size = isset($_POST['product_size']) ? $_POST['product_size'] : [];
     $product_price = $_POST['product_price'];
+    $product_sale = $_POST['product_sale'];
+    $product_quantity = $_POST['product_quantity'];
     $product_description = $_POST['product_description'];
     $product_color_name = $_POST['product_color_name'];
 
@@ -35,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Vui lòng điền đầy đủ thông tin bắt buộc');</script>";
     } else {
         // Thực hiện cập nhật sản phẩm (cần viết hàm update_product với các tham số này)
-        $update_product = $product->update_product($product_id, $product_name, $brand_id, $product_size, $product_price, $product_description, $product_color_name, $product_color_image, $product_image, $product_img_desc);
+        $update_product = $product->update_product($product_id, $product_name, $brand_id, $product_quantity,$product_sale, $product_size, $product_price, $product_description, $product_color_name, $product_color_image, $product_image, $product_img_desc);
 
         if ($update_product) {
             echo "<script>alert('Danh mục đã được cập nhật thành công');</script>";
@@ -113,6 +115,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <label for="product_price">Giá sản phẩm <span style="color: red;">*</span></label>
                 <input name="product_price"   type="number" placeholder="Nhập giá sản phẩm" min="0" step="0.01" value="<?php echo htmlspecialchars($resultA['product_price']); ?>">
+                
+                <label for="product_sale">Khuyến mãi <span style="color: red;">*</span></label>
+                <input name="product_sale"   type="number" placeholder="Nhập Khuyễn mãi" min="0" step="0.01" value="<?php echo htmlspecialchars($resultA['product_sale']); ?>">
+                
+                <label for="product_quantity">Số lượng <span style="color: red;">*</span></label>
+                <input name="product_quantity"   type="number" placeholder="Nhập số lượng" min="0" step="0.01" value="<?php echo htmlspecialchars($resultA['product_quantity']); ?>">
 
                 <label for="product_description">Mô tả sản phẩm</label>
                 <textarea name="product_description" id="editor" cols="30" rows="10" placeholder="Mô tả sản phẩm"><?php echo htmlspecialchars($resultA['product_description']); ?></textarea>

@@ -179,4 +179,20 @@ class product
         }
         return implode(',', $file_names);
     }
+
+    
+
+    public function update_product_quantity($product_name, $brand_id, $product_quantity, $product_id)
+{
+    // Lệnh SQL cập nhật chính xác
+    $query = "UPDATE products SET 
+                product_name = '$product_name',
+                brand_id = '$brand_id',
+                product_quantity = '$product_quantity'
+              WHERE product_id = '$product_id'";
+
+    $result = $this->db->update($query);
+    return $result;
+}
+
 }

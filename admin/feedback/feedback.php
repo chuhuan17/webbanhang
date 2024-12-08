@@ -27,9 +27,9 @@ if (isset($_GET['id'])) {
             <tr>
                 <th>STT</th>
                 <th>ID</th>
-                <th>Loại sản phẩm</th> <!-- Thêm cột này -->
-                <th>Tên sản phẩm</th>
-                <th>Giá</th>
+                <th>Email</th> <!-- Thêm cột này -->
+                <th>Nội dung</th>
+                <th>Thao tác</th>
                 
             </tr>
             <?php
