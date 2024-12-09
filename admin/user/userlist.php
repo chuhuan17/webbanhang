@@ -34,7 +34,7 @@ include "../class/user_class.php";
                             <td><?php echo $result['phone']?></td>
                             <td><?php echo $result['address']?></td>
                             <td><?php if ($result['role'] == 0 ){
-                                    echo "Người dùng"; }
+                                    echo "khách hàng"; }
                                     else { echo "Admin"; } ?>
                             </td>
                             <td><a href="useredit.php?id=<?php echo $result['user_id'] ?>">Sửa</a>|<a href="userdelete.php?id=<?php echo $result['user_id'] ?>">Xóa</a></td>

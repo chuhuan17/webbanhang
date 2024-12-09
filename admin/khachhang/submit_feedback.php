@@ -64,12 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="thank-you-container">
         <div class="card-body">
             <h1 class="card-title text-success">Cảm ơn bạn!</h1>
-            <p class="card-text mt-3">Chúng tôi đã nhận được thông tin liên hệ của bạn.</p>
+            <p class="card-text mt-3">Chúng tôi đã nhận được thông tin phản hồi của bạn.</p>
             <p>Đội ngũ của chúng tôi sẽ sớm phản hồi qua email hoặc số điện thoại bạn đã cung cấp.</p>
             <hr>
             <p class="mb-2">Nếu cần hỗ trợ ngay lập tức, bạn có thể liên hệ qua:</p>
-            <p><strong>Email:</strong> support@eden.com</p>
-            <p><strong>Số điện thoại:</strong> 0333268135</p>
+            <p><strong>Email:</strong> huan@eden.com</p>
+            <p><strong>Số điện thoại:</strong> 0392953038</p>
             <a href="index.php" class="btn btn-primary mt-4">Quay lại trang chủ</a>
         </div>
     </div>
