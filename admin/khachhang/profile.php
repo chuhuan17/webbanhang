@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
                                 <label for="address" class="form-label"><strong>Địa chỉ:</strong></label>
                                 <input type="text" id="address" name="address" class="form-control" value="<?php echo htmlspecialchars($customer['address']); ?>" required>
                             </div>
-                            <button type="submit" class="btn btn-success">Lưu thay đổi</button>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </form>
                     </div>
                     <div class="card-footer text-center">

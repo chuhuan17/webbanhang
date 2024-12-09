@@ -40,6 +40,14 @@ if (isset($_GET['vnp_Amount'])) {
     if ($stmt) {
         unset($_SESSION['cart_code']);
     }
+}if (isset($_GET['cart_code'])) {
+    $cart_code = $_GET['cart_code'];
+} elseif (isset($_GET['vnp_TxnRef'])) {
+    $cart_code = $_GET['vnp_TxnRef'];
+} elseif (isset($_GET['orderId'])) {
+    $cart_code = $_GET['orderId'];
+} else {
+    die("Lỗi: Thiếu mã đơn hàng.");
 }
 ?>
 <!DOCTYPE html>

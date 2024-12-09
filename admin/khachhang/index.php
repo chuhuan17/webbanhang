@@ -70,7 +70,7 @@ $db = new Database();
     <div class="container">
         <!-- Sản phẩm nổi bật -->
         <section id="product-slider" class="mb-5">
-            <h2 class="text-center text-primary mb-4">Sản phẩm nổi bật</h2>
+            <h2 class="text-center text mb-4">Sản phẩm nổi bật</h2>
             <div class="row row-cols-1 row-cols-md-4 g-4">
                 <?php
                 $query_products = "SELECT * FROM products WHERE remarkable = 1";
@@ -119,7 +119,7 @@ $db = new Database();
             while ($row_brand = $result_brands->fetch_assoc()) {
         ?>
                 <section id="product-slider" class="mb-5">
-                    <h2 class="text-center text-primary mb-4"><?php echo htmlspecialchars($row_brand['brand_name']); ?></h2>
+                    <h2 class="text-center text mb-4"><?php echo htmlspecialchars($row_brand['brand_name']); ?></h2>
                     <div class="row row-cols-1 row-cols-md-4 g-4">
                         <?php
                         $query_products = "SELECT * FROM products WHERE brand_id = ? LIMIT 4";

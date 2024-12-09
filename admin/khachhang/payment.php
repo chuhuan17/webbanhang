@@ -75,19 +75,21 @@ include 'header.php';
                         <h3>Chọn phương thức thanh toán</h3>
                         <div>
                             <input type="radio" id="COD" name="payment_method" value="COD" checked>
-                            <label for="COD">Thanh toán khi nhận hàng</label>
+                            <label for="COD"><img src="../../img/cash.png" alt="" width="50px" height="50px" style="margin-left: 5px;"> Thanh toán khi nhận hàng</label>
                         </div>
                         <div>
                             <input type="radio" id="VNPAY" name="payment_method" value="VNPAY">
-                            <label for="VNPAY">Thanh toán qua VNPay</label>
+                            <label for="VNPAY"><img src="../../img/vnpay.png" alt="" width="50px" height="50px" style="margin-left: 5px;"> VNPay</label>
                         </div>
                         <div>
                             <input type="radio" id="MOMO" name="payment_method" value="MOMO">
-                            <label for="MOMO">Thanh toán qua MOMO </label>
+                            
+                            <label for="MOMO"><img src="../../img/momo.png" alt="" width="50px" height="50px" style="margin-left: 5px;">MOMO </label>
                         </div>
                         <div>
                             <input type="radio" id="MOMO-ATM" name="payment_method" value="MOMO-ATM">
-                            <label for="MOMO-ATM">Thanh toán qua MOMO-ATM</label>
+                           
+                            <label for="MOMO-ATM"> <img src="../../img/momo.png" alt="" width="50px" height="50px" style="margin-left: 5px;">MOMO-ATM</label>
                         </div>
                         <?php if (count($_SESSION['cart']) > 0):
                         ?>

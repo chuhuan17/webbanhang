@@ -59,7 +59,8 @@ if ($cart_payment === 'COD') {
         }
     }
     include 'formail.php';
-    header( "Location: thanks.php" );
+    header( "Location: thanks.php?cart_code=$cart_code" );
+
 
 } elseif ($cart_payment === 'VNPAY') {
     include 'handlevnpay.php';

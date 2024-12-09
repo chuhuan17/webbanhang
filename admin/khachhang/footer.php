@@ -1,9 +1,8 @@
 <hr>
     <div class="footer-top">
         <li><a href=><img src="../../img/img-congthuong.png" alt=""></a></li>
-        <li><a href="">Liên hệ</a></li>
-        <li><a href="">Tuyển dụng</a></li>
-        <li><a href="">Giới thiệu</a></li>
+        <li><a href="./feedback.php">Liên hệ</a></li>
+        <li><a href="./about.html">Về chúng tôi</a></li>
         <li>
             <a href="" class="fab fa-facebook-f"></a>
             <a href="" class="fab fa-twitter"></a>
