@@ -8,10 +8,10 @@ $result_chitiet = $db->conn->query($query_chitiet);
 if ($result_chitiet->num_rows > 0) {
     while ($chitiet = $result_chitiet->fetch_assoc()) {
 ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <link rel="stylesheet" href="../styles_product.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-
         <style>
             a {
                 text-decoration: none;
@@ -126,7 +126,22 @@ if ($result_chitiet->num_rows > 0) {
                                     <i class="fa-solid fa-cart-plus me-2"></i>Thêm vào giỏ hàng
                                 </button>
                             </div>
-
+                            <?php if (isset($_GET['added']) && $_GET['added'] == 1): ?>
+                                <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Đã thêm vào giỏ hàng!',
+                                        showConfirmButton: false,
+                                        timer: 1500,
+                                        toast: true,
+                                        position: 'top-end',
+                                        customClass: {
+                                            popup: 'swal2-custom-popup',
+                                            icon: 'swal2-custom-icon'
+                                        }
+                                    });
+                                </script>
+                            <?php endif; ?>
                             <!-- Phần chi tiết sản phẩm -->
                             <!-- Phần chi tiết sản phẩm -->
                             <div class="mb-3">
