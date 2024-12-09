@@ -4,8 +4,6 @@ include '../database/sidebar.php';
 include "../class/brand_class.php";
 $db = new Database();
 $conn = $db->connect();
-
-
 $sql = "SELECT * FROM feedback";
 $show_product = $db->select($sql);
 
@@ -46,6 +44,8 @@ if (isset($_GET['id'])) {
                         <td><a href="feedback.php?id=<?php echo $result['id'] ?>">Xóa</a></td>
                     </tr>
             <?php
+
+
                 }
             }
             ?>

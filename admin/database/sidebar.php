@@ -48,7 +48,6 @@ if (isset($_GET['act']) && $_GET['act'] == 'logout') {
                         <li><a href="../feedback/feedback.php">Xem phản hồi</a></li>
                     </ul>
                 </li>
-                <li><a href="setting.php">Cài đặt</a></li>
                 <li><a href="../login/login.php?act=logout" onclick="return confirm('Bạn có chắc chắn muốn đăng xuất không?')">Đăng xuất</a></li>
             </ul>
         </div>
