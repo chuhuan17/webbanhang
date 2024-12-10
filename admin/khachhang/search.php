@@ -29,7 +29,7 @@ $result = $stmt->get_result();
 </head>
 
 <body>
-    <div class="container my-5">
+    <div class="container my-5" id="Table">
         <h2 class="text-center mb-4">Kết quả tìm kiếm cho từ khóa: "<?php echo htmlspecialchars($keyword); ?>"</h2>
 
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -42,20 +42,20 @@ $result = $stmt->get_result();
                             <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="text-decoration-none text-dark">
                                 <img src="../uploads/<?php echo htmlspecialchars($row['product_image']); ?>" class="card-img-top img-fluid" alt="Product Image">
                                 <div class="card-body text-center">
-                                        <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                        <span style="text-decoration: line-through; color: black; font-weight: bold;">
-                                            <?php echo number_format($row['product_price'], 0, ',', '.') . ' VND'; ?>
-                                        </span><br>
-                                        <span style="font-weight: bold; font-size: 1.2em; color: #f2231d;">
-                                            <?php echo number_format($row['price_sale'], 0, ',', '.') . ' VND'; ?>
-                                        </span>
-                                        <br>
-                                        <small style="color: green; font-weight: bold;">
-                                            Giảm <?php echo $row['product_sale']; ?>%
-                                        </small>
-                                        <br>
-                                        <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-primary">Xem chi tiết</a>
-                                    </div>
+                                    <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
+                                    <span style="text-decoration: line-through; color: black; font-weight: bold;">
+                                        <?php echo number_format($row['product_price'], 0, ',', '.') . ' VND'; ?>
+                                    </span><br>
+                                    <span style="font-weight: bold; font-size: 1.2em; color: #f2231d;">
+                                        <?php echo number_format($row['price_sale'], 0, ',', '.') . ' VND'; ?>
+                                    </span>
+                                    <br>
+                                    <small style="color: green; font-weight: bold;">
+                                        Giảm <?php echo $row['product_sale']; ?>%
+                                    </small>
+                                    <br>
+                                    <a href="product.php?product_id=<?php echo $row['product_id']; ?>" class="btn btn-primary">Xem chi tiết</a>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -68,11 +68,11 @@ $result = $stmt->get_result();
         </div>
 
         <!-- Pagination placeholder -->
-        <nav aria-label="Page navigation" class="d-flex justify-content-center mt-4">
-            <ul class="pagination" id="pagination">
-                <!-- Nội dung phân trang -->
-            </ul>
-        </nav>
+        <div class="row">
+            <nav>
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+            </nav>
+        </div>
     </div>
 
     <?php
@@ -80,6 +80,7 @@ $result = $stmt->get_result();
     $conn->close();
     include 'footer.php';
     ?>
+    <script src="../js/paginationadmin.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

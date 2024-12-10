@@ -20,6 +20,10 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `clothing_store`
 --
+CREATE DATABASE IF NOT EXISTS `clothing_store` ;
+USE `clothing_store`;
+
+
 
 -- --------------------------------------------------------
 
