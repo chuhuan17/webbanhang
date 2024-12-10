@@ -40,12 +40,14 @@
     /* Khoảng cách bên trong nút */
     cursor: pointer;
     /* Hiển thị biểu tượng tay */
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease; 
 }
 
 .other button:hover {
     background-color: #e55b50;
     /* Đổi màu nền khi hover */
+    transition-delay: 1s;
+
 }
 
 /* Phần menu người dùng */
@@ -148,6 +150,7 @@
     border-radius: 5px;
     /* Bo góc cho mục chính */
     transition: background-color 0.3s ease, color 0.3s ease;
+    transition-delay: 1s;
 }
 
 .menu>li>a:hover {
@@ -182,6 +185,7 @@
 /* Hiển thị sub-menu khi hover */
 .menu>li:hover .sub-menu {
     display: block;
+    transition-delay: 1s;
 }
 
 /* Các mục trong sub-menu */
@@ -194,6 +198,7 @@
     border-bottom: 1px solid #ddd;
     /* Viền dưới */
     transition: background-color 0.3s ease, color 0.3s ease;
+    transition-delay: 1s;
 }
 
 .sub-menu li:last-child {
@@ -213,6 +218,7 @@
     /* Nền khi hover */
     color: white;
     /* Chữ khi hover */
+    transition-delay: 1s;
 }
 
 /* Responsive Design */

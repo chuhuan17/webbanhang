@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 08, 2024 lúc 07:42 AM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Dec 10, 2024 at 05:41 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `clothing_store`
+-- Database: `clothing_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `brands`
+-- Table structure for table `brands`
 --
 
 CREATE TABLE `brands` (
@@ -33,7 +33,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `brands`
+-- Dumping data for table `brands`
 --
 
 INSERT INTO `brands` (`brand_id`, `brand_name`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `brands` (`brand_id`, `brand_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -59,7 +59,7 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `cart`
+-- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `cart_code`, `cart_status`, `cart_date`, `total_amount`, `cart_payment`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `cart_code`, `cart_status`, `cart_date
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart_details`
+-- Table structure for table `cart_details`
 --
 
 CREATE TABLE `cart_details` (
@@ -90,7 +90,7 @@ CREATE TABLE `cart_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `cart_details`
+-- Dumping data for table `cart_details`
 --
 
 INSERT INTO `cart_details` (`cart_details_id`, `cart_code`, `product_id`, `quantity`, `size`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `cart_details` (`cart_details_id`, `cart_code`, `product_id`, `quant
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feedback`
+-- Table structure for table `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -120,7 +120,7 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `feedback`
+-- Dumping data for table `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
@@ -129,7 +129,7 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `momo`
+-- Table structure for table `momo`
 --
 
 CREATE TABLE `momo` (
@@ -144,7 +144,7 @@ CREATE TABLE `momo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `momo`
+-- Dumping data for table `momo`
 --
 
 INSERT INTO `momo` (`id_momo`, `partner_code`, `order_code`, `amount`, `order_info`, `order_type`, `trans_id`, `pay_type`) VALUES
@@ -156,7 +156,7 @@ INSERT INTO `momo` (`id_momo`, `partner_code`, `order_code`, `amount`, `order_in
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -178,7 +178,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_sale`, `product_quantity`, `product_image`, `brand_id`, `created_at`, `updated_at`, `product_color_image`, `product_color_name`, `remarkable`, `product_size`) VALUES
@@ -193,12 +193,21 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `pr
 (44, 'Đầm ôm cổ kiểu Pauline', '', 2490000.00, 19, 49, 'a2e5f733eb62034ff70bcd9015b09cb8.webp', 12, '2024-11-10 14:58:38', '2024-12-08 04:36:46', '003.png', 'Be', 1, 0),
 (45, 'Đầm xòe Rosalie', '', 2390000.00, 20, 50, '1cc773085f22bcda0562d5877edb1a9a.webp', 12, '2024-11-10 15:00:27', '2024-12-04 16:00:43', '049.png', 'Đen', 0, 0),
 (46, 'Đầm xòe Foral Lụa Midi', '', 1890000.00, 1, 50, '1e86e5194b950559f4ee6e0e6005e730.webp', 12, '2024-11-10 15:01:37', '2024-12-04 16:00:44', 'h15.png', 'Hồng kẹo', 1, 0),
-(47, '1', '1', 1.00, 1, 2, 'about.webp', 13, '2024-12-04 15:13:35', '2024-12-08 06:22:09', 'about.webp', '1', 0, 0);
+(47, '1', '1', 1.00, 1, 2, 'about.webp', 13, '2024-12-04 15:13:35', '2024-12-08 06:22:09', 'about.webp', '1', 0, 0),
+(48, 'Quần suông tuysi', 'Nằm trong BST mùa thu đông 2024, “SOLAR - SHINE TOGETHER” được trình làng với giới mộ điệu như một bản hòa ca tôn vinh tinh thần tự do, sự lạc quan và vẻ đẹp rực rỡ của phái đẹp. Đánh dấu sự chuyển mình của phụ nữ trong thời hiện đại, vượt qua những tiêu chuẩn “kép” áp đặt lên họ.\r\n\r\nNhững thiết kế trong BST hướng tới tôn vinh tính nữ hiện đại thông qua từng đường nét – từ sự mềm mại và duyên dáng đến sự mạnh mẽ và tự chủ. Mỗi sản phẩm đều thể hiện tính kiêu hãnh, đồng thời phá bỏ mọi rào cản để phụ nữ tự do thể hiện cá tính riêng, sống đúng với con người thật của mình.\r\n\r\nSử dụng chất kiệu vải Tuysi mềm nhẹ, thoải mái, thiết kế dáng suông che khuyết điểm tốt giúp nàng tự tin mỗi khi xuất hiện.\r\n\r\nQuần kèm hai túi sườn và độ dài ngang mắt cá chân. Cắt may chỉn chu, tỉ mỉ, nhấn ly giữa độc đáo, tạo điểm nhấn mới lạ cho thiết kế. \r\n\r\nNàng công sở có thể kết hợp với nhiều kiểu áo khác nhau để mang đến những bộ trang phục chỉn chu và lịch sự.  \r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1490000.00, 10, 10, 'túyi1.webp', 11, '2024-12-10 04:04:43', '2024-12-10 04:04:43', 'túyi6.png', 'Be', 0, 0),
+(49, 'Quần kẻ Serge ống suông', 'Chiếc quần Tây hiện đại được pha trộn hoàn hảo giữa phong cách thời trang trẻ trung và sự sang trọng của môi trường công sở. \r\n\r\nThiết kế lưng quần cạp cao kết hợp ống suông giúp tôn lên vóc dáng, mang lại sự thoải mái cho người mặc. Chất liệu vải Serge kết cấu từ các sợi Poly, Rayon, Spandex cùng đặc tính mềm mịn, thoáng mát, co giãn nhẹ, phù hợp cho mọi hoạt động hàng ngày như đi làm, đi chơi.\r\n\r\nHọa tiết kẻ thanh lịch, màu sắc trung tính, quần dễ dàng phối hợp với các loại áo từ áo thun đơn giản đến áo sơ mi, áo blazer để tạo nên vẻ ngoài thời thượng nhưng không kém phần thanh lịch.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1290000.00, 10, 10, 'serge1.webp', 11, '2024-12-10 04:07:51', '2024-12-10 04:07:51', 'serge6.png', 'Kẻ khói', 0, 0),
+(50, 'Quần ống đứng DIVAS', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nQuần Tây dáng ống đứng cổ điển giúp tôn dáng, tạo cảm giác chân dài và vóc dáng cân đối, phù hợp với mọi kiểu dáng cơ thể.\r\n\r\n- Chất liệu Tuysi cao cấp, mềm mại, thoáng mát và bền đẹp\r\n\r\n- Phom dáng ống đứng cổ điển, tôn dáng và tạo cảm giác cân đối\r\n\r\n- Thiết kế tối giản, tinh tế với đường may sắc sảo\r\n\r\n- Dễ phối với nhiều loại trang phục như áo sơ mi, blazer, hoặc áo thun\r\n\r\n- Phù hợp cho các dịp từ công sở, họp hành đến sự kiện trang trọng hoặc dạo phố\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1300000.00, 15, 10, 'divas1.webp', 11, '2024-12-10 04:10:12', '2024-12-10 04:10:12', 'divas6.png', 'Đen', 0, 0),
+(51, 'Quần Baggy Divas', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nQuần Baggy Divas với phần hông thoải mái, ống quần nhẹ nhàng thu nhỏ tạo phom thời thượng, vừa giúp tôn dáng và vẫn che khuyết điểm một cách tự nhiên. \r\n\r\n- Chất liệu Tuysi cao cấp, mềm mại, thoáng mát, giữ phom dáng tốt\r\n\r\n- Thiết kế baggy hiện đại, phù hợp với nhiều dáng người\r\n\r\n- Cạp quần vừa vặn, tôn vòng eo và tạo sự thoải mái khi mặc\r\n\r\n- Dễ dàng phối đồ với nhiều loại áo, từ sơ mi thanh lịch đến thun năng động\r\n\r\n- Phù hợp cho nhiều dịp: đi làm, dạo phố, gặp gỡ bạn bè hoặc sự kiện thường ngày\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1190000.00, 10, 10, 'baggy1.webp', 11, '2024-12-10 04:12:02', '2024-12-10 04:12:02', 'baggy6.png', 'Be', 0, 0),
+(52, 'Quần dài suông Dreamy', 'Thiết kế nằm trong BST Dreamy Bloom, người bạn đồng hành hoàn hảo của phái đẹp, giúp nàng luôn tự tin, sang trọng và phong cách trong mọi khoảnh khắc.\r\n\r\nSử dụng chất kiệu vải Tuysi mềm nhẹ, thoải mái, thiết kế dáng suông che khuyết điểm tốt giúp nàng tự tin mỗi khi xuất hiện.\r\n\r\nQuần kèm hai túi sườn và độ dài ngang mắt cá chân. Cắt may chỉn chu, tỉ mỉ, nhấn ly giữa độc đáo, tạo điểm nhấn mới lạ cho thiết kế. \r\n\r\nNàng công sở có thể kết hợp với nhiều kiểu áo khác nhau để mang đến những bộ trang phục chỉn chu và lịch sự.  \r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1490000.00, 15, 10, 'dreamy1.webp', 11, '2024-12-10 04:14:05', '2024-12-10 04:14:05', 'dreamy6.png', 'Khói đậm', 0, 0),
+(53, 'Quần suông Tuysi Magic', '- Sử dụng chất kiệu vải Tuysi mềm nhẹ, thoải mái, thiết kế che khuyết điểm tốt giúp nàng tự tin mỗi khi xuất hiện.\r\n\r\n- Quần kèm hai túi sườn và độ dài ngang mắt cá chân. Thiết kế chỉn chu, tỉ mỉ, nhấn ly nhẹ nhàng.\r\n\r\n- Nàng công sở có thể kết hợp với nhiều kiểu áo khác nhau để mang đến những bộ trang phục chỉn chu và lịch sự.  \r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1390000.00, 15, 10, 'tuysi1.webp', 11, '2024-12-10 04:16:04', '2024-12-10 04:16:04', 'tuysi6.png', 'Trắng', 0, 0),
+(54, 'Quần ông loe Artiste', 'Thiết kế quần ống loe kết hợp hoàn hảo giữa nét cổ điển và phong cách hiện đại, mang đến vẻ ngoài quyến rũ, thời thượng cho người mặc.\r\n\r\n- Chất liệu Tuysi cao cấp, thoáng mát, mềm mại và giữ phom dáng đẹp\r\n\r\n- Thiết kế ống loe nhẹ nhàng, tôn lên chiều cao và vẻ thanh thoát\r\n\r\n- Cạp cao vừa vặn, tôn vòng eo, phù hợp với nhiều dáng người\r\n\r\n- Dễ dàng phối hợp với các kiểu áo để tạo phong cách khác nhau\r\n\r\n- Phù hợp cho nhiều dịp: đi làm, dạo phố, gặp gỡ bạn bè, hoặc các sự kiện quan trọng\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1111111.00, 10, 10, 'artiste1.webp', 11, '2024-12-10 04:18:41', '2024-12-10 04:18:41', 'artiste6.png', 'Đen', 0, 0),
+(55, 'Quần Baggy Muse', 'Ánh nắng mùa thu, dù không còn chói chang, vẫn mang đến cảm giác ấm áp, nhẹ nhàng tựa như sự mềm mại và lãng mạn luôn hiện hữu bên trong mỗi người phụ nữ. Đây chính là nguồn cảm hứng chủ đạo cho những thiết kế tinh tế trong BST Muse of the Sun.\r\n\r\nQuần Tuysi ống Baggy cạp cao, độ dài trên ngang mắt cá chân. Ống có độ ôm nhẹ, chiết ly thân trước thanh lịch, trẻ trung. 2 bên quần có 2 túi chéo. \r\n\r\nThiết kế quần phù hợp để nàng phối cùng nhiều item khác nhau, từ thanh lịch công sở với sơ mi cho đến năng động trẻ trung cùng áo thun.\r\n\r\nChất liệu Tuysi thoáng mát và thấm hút mồ hôi tốt. Hơn nữa còn giữ form quần suốt cả ngày dài.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 15, 10, 'muse1.webp', 11, '2024-12-10 04:21:04', '2024-12-10 04:21:04', 'muse6.png', 'Trắng', 0, 0),
+(56, 'Quần Tây Poly', 'Quần Tây ống đứng là một item không thể thiếu trong tủ đồ của những ai yêu thích phong cách đơn giản, thanh lịch nhưng vẫn thời trang.\r\n\r\nThiết kế lựa chọn chất liệu Tuysi được dệt từ những sợi Poly cao cấp mang lại độ bền và khả năng giữ dáng tốt. Quần còn có đặc tính thoáng mát, giúp bạn cảm thấy thoải mái cả khi làm việc hay tham gia các sự kiện. \r\n\r\nQuần dáng ống đứng cổ điển, tôn lên vóc dáng thon gọn, tạo cảm giác chuyên nghiệp, chỉn chu cho người mặc. Phần túi sườn thiết kế khéo léo, không chỉ tăng thêm tính tiện dụng mà còn giữ được vẻ ngoài thời thượng và gọn gàng.\r\n\r\nQuần dễ dàng phối hợp với áo sơ mi, blazer hoặc áo thun, mang lại vẻ ngoài tinh tế cho cả công sở lẫn các buổi gặp gỡ quan trọng.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 10, 10, 'poly1.webp', 11, '2024-12-10 04:22:59', '2024-12-10 04:22:59', 'poly6.png', 'Đen', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_img`
+-- Table structure for table `product_img`
 --
 
 CREATE TABLE `product_img` (
@@ -209,7 +218,7 @@ CREATE TABLE `product_img` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_img`
+-- Dumping data for table `product_img`
 --
 
 INSERT INTO `product_img` (`img_id`, `product_id`, `img_url`, `created_at`) VALUES
@@ -282,12 +291,48 @@ INSERT INTO `product_img` (`img_id`, `product_id`, `img_url`, `created_at`) VALU
 (99, 46, '2a17824a833201351bd75a50d3376a2c.webp', '2024-11-10 15:01:37'),
 (100, 46, '9aaa93093650bf387b9f50d6115e4e02.webp', '2024-11-10 15:01:37'),
 (101, 46, '73b3291b9b2fc2e2122fc0b25487754a.webp', '2024-11-10 15:01:37'),
-(102, 47, 'about.webp', '2024-12-04 15:13:35');
+(102, 47, 'about.webp', '2024-12-04 15:13:35'),
+(103, 48, 'túyi5.webp', '2024-12-10 04:04:43'),
+(104, 48, 'túyi4.webp', '2024-12-10 04:04:43'),
+(105, 48, 'túyi3.webp', '2024-12-10 04:04:43'),
+(106, 48, 'túyi2.webp', '2024-12-10 04:04:43'),
+(107, 49, 'serge5.webp', '2024-12-10 04:07:51'),
+(108, 49, 'serge4.webp', '2024-12-10 04:07:51'),
+(109, 49, 'serge3.webp', '2024-12-10 04:07:51'),
+(110, 49, 'serge2.webp', '2024-12-10 04:07:51'),
+(111, 50, 'divas5.webp', '2024-12-10 04:10:12'),
+(112, 50, 'divas4.webp', '2024-12-10 04:10:12'),
+(113, 50, 'divas3.webp', '2024-12-10 04:10:12'),
+(114, 50, 'divas2.webp', '2024-12-10 04:10:12'),
+(115, 51, 'baggy5.webp', '2024-12-10 04:12:02'),
+(116, 51, 'baggy4.webp', '2024-12-10 04:12:02'),
+(117, 51, 'baggy3.webp', '2024-12-10 04:12:02'),
+(118, 51, 'baggy2.webp', '2024-12-10 04:12:02'),
+(119, 52, 'dreamy5.webp', '2024-12-10 04:14:05'),
+(120, 52, 'dreamy4.webp', '2024-12-10 04:14:05'),
+(121, 52, 'dreamy3.webp', '2024-12-10 04:14:05'),
+(122, 52, 'dreamy2.webp', '2024-12-10 04:14:05'),
+(123, 53, 'tuysi5.webp', '2024-12-10 04:16:04'),
+(124, 53, 'tuysi4.webp', '2024-12-10 04:16:04'),
+(125, 53, 'tuysi3.webp', '2024-12-10 04:16:04'),
+(126, 53, 'tuysi2.webp', '2024-12-10 04:16:04'),
+(127, 54, 'artiste5.webp', '2024-12-10 04:18:41'),
+(128, 54, 'artiste4.webp', '2024-12-10 04:18:41'),
+(129, 54, 'artiste3.webp', '2024-12-10 04:18:41'),
+(130, 54, 'artiste2.webp', '2024-12-10 04:18:41'),
+(131, 55, 'muse5.webp', '2024-12-10 04:21:04'),
+(132, 55, 'muse4.webp', '2024-12-10 04:21:04'),
+(133, 55, 'muse3.webp', '2024-12-10 04:21:04'),
+(134, 55, 'muse2.webp', '2024-12-10 04:21:04'),
+(135, 56, 'poly5.webp', '2024-12-10 04:22:59'),
+(136, 56, 'poly4.webp', '2024-12-10 04:22:59'),
+(137, 56, 'poly3.webp', '2024-12-10 04:22:59'),
+(138, 56, 'poly2.webp', '2024-12-10 04:22:59');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_sizes`
+-- Table structure for table `product_sizes`
 --
 
 CREATE TABLE `product_sizes` (
@@ -297,7 +342,7 @@ CREATE TABLE `product_sizes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_sizes`
+-- Dumping data for table `product_sizes`
 --
 
 INSERT INTO `product_sizes` (`size_id`, `product_id`, `size_name`) VALUES
@@ -396,12 +441,57 @@ INSERT INTO `product_sizes` (`size_id`, `product_id`, `size_name`) VALUES
 (157, 46, 'L'),
 (158, 46, 'XL'),
 (159, 46, 'XXL'),
-(160, 47, 'S');
+(160, 47, 'S'),
+(161, 48, 'S'),
+(162, 48, 'M'),
+(163, 48, 'L'),
+(164, 48, 'XL'),
+(165, 48, 'XXL'),
+(166, 49, 'S'),
+(167, 49, 'M'),
+(168, 49, 'L'),
+(169, 49, 'XL'),
+(170, 49, 'XXL'),
+(171, 50, 'S'),
+(172, 50, 'M'),
+(173, 50, 'L'),
+(174, 50, 'XL'),
+(175, 50, 'XXL'),
+(176, 51, 'S'),
+(177, 51, 'M'),
+(178, 51, 'L'),
+(179, 51, 'XL'),
+(180, 51, 'XXL'),
+(181, 52, 'S'),
+(182, 52, 'M'),
+(183, 52, 'L'),
+(184, 52, 'XL'),
+(185, 52, 'XXL'),
+(186, 53, 'S'),
+(187, 53, 'M'),
+(188, 53, 'L'),
+(189, 53, 'XL'),
+(190, 53, 'XXL'),
+(191, 54, 'S'),
+(192, 54, 'M'),
+(193, 54, 'L'),
+(194, 54, 'XL'),
+(195, 54, 'XXL'),
+(196, 55, 'S'),
+(197, 55, 'M'),
+(198, 55, 'L'),
+(199, 55, 'XL'),
+(200, 55, 'XXL'),
+(201, 56, 'S'),
+(202, 56, 'M'),
+(203, 56, 'L'),
+(204, 56, 'XL'),
+(205, 56, 'XXL');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `shipping`
+-- Table structure for table `shipping`
 --
 
 CREATE TABLE `shipping` (
@@ -414,7 +504,7 @@ CREATE TABLE `shipping` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `shipping`
+-- Dumping data for table `shipping`
 --
 
 INSERT INTO `shipping` (`shipping_id`, `name`, `phone`, `address`, `note`, `user_id`) VALUES
@@ -424,7 +514,7 @@ INSERT INTO `shipping` (`shipping_id`, `name`, `phone`, `address`, `note`, `user
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sizes`
+-- Table structure for table `sizes`
 --
 
 CREATE TABLE `sizes` (
@@ -435,7 +525,7 @@ CREATE TABLE `sizes` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -450,7 +540,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `user`, `email`, `pass`, `created_at`, `role`, `address`, `phone`) VALUES
@@ -463,7 +553,7 @@ INSERT INTO `users` (`user_id`, `user`, `email`, `pass`, `created_at`, `role`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `vnpay`
+-- Table structure for table `vnpay`
 --
 
 CREATE TABLE `vnpay` (
@@ -480,147 +570,147 @@ CREATE TABLE `vnpay` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `brands`
+-- Indexes for table `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`brand_id`);
 
 --
--- Chỉ mục cho bảng `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
--- Chỉ mục cho bảng `cart_details`
+-- Indexes for table `cart_details`
 --
 ALTER TABLE `cart_details`
   ADD PRIMARY KEY (`cart_details_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `feedback`
+-- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `momo`
+-- Indexes for table `momo`
 --
 ALTER TABLE `momo`
   ADD PRIMARY KEY (`id_momo`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `brand_id` (`brand_id`);
 
 --
--- Chỉ mục cho bảng `product_img`
+-- Indexes for table `product_img`
 --
 ALTER TABLE `product_img`
   ADD PRIMARY KEY (`img_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `product_sizes`
+-- Indexes for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
   ADD PRIMARY KEY (`size_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Chỉ mục cho bảng `shipping`
+-- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
   ADD PRIMARY KEY (`shipping_id`),
   ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `username` (`user`);
 
 --
--- Chỉ mục cho bảng `vnpay`
+-- Indexes for table `vnpay`
 --
 ALTER TABLE `vnpay`
   ADD PRIMARY KEY (`vnpay_id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `brands`
+-- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `cart_details`
+-- AUTO_INCREMENT for table `cart_details`
 --
 ALTER TABLE `cart_details`
   MODIFY `cart_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `feedback`
+-- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `momo`
+-- AUTO_INCREMENT for table `momo`
 --
 ALTER TABLE `momo`
   MODIFY `id_momo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT cho bảng `product_img`
+-- AUTO_INCREMENT for table `product_img`
 --
 ALTER TABLE `product_img`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
--- AUTO_INCREMENT cho bảng `product_sizes`
+-- AUTO_INCREMENT for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
 
 --
--- AUTO_INCREMENT cho bảng `shipping`
+-- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
   MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT cho bảng `vnpay`
+-- AUTO_INCREMENT for table `vnpay`
 --
 ALTER TABLE `vnpay`
   MODIFY `vnpay_id` int(11) NOT NULL AUTO_INCREMENT;
