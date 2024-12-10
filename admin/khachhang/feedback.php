@@ -34,7 +34,7 @@
         <!-- Thông báo gửi thành công -->
         <?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
             <div class="alert alert-success text-center">
-                Cảm ơn bạn! Tin nhắn của bạn đã được gửi thành công.
+                Cảm ơn bạn! Phản hồi của bạn đã được gửi thành công.
             </div>
         <?php endif; ?>
         <div class="row justify-content-center">

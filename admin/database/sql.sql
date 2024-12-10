@@ -2,12 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 10, 2024 at 06:43 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
-CREATE DATABASE IF NOT EXISTS clothing_store DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE clothing_store;
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 10, 2024 lúc 07:41 AM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clothing_store`
+-- Cơ sở dữ liệu: `clothing_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Cấu trúc bảng cho bảng `brands`
 --
 
 CREATE TABLE `brands` (
@@ -35,7 +33,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `brands`
+-- Đang đổ dữ liệu cho bảng `brands`
 --
 
 INSERT INTO `brands` (`brand_id`, `brand_name`) VALUES
@@ -47,7 +45,7 @@ INSERT INTO `brands` (`brand_id`, `brand_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -61,7 +59,7 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cart`
+-- Đang đổ dữ liệu cho bảng `cart`
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `cart_code`, `cart_status`, `cart_date`, `total_amount`, `cart_payment`) VALUES
@@ -80,7 +78,7 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `cart_code`, `cart_status`, `cart_date
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart_details`
+-- Cấu trúc bảng cho bảng `cart_details`
 --
 
 CREATE TABLE `cart_details` (
@@ -92,7 +90,7 @@ CREATE TABLE `cart_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cart_details`
+-- Đang đổ dữ liệu cho bảng `cart_details`
 --
 
 INSERT INTO `cart_details` (`cart_details_id`, `cart_code`, `product_id`, `quantity`, `size`) VALUES
@@ -110,7 +108,7 @@ INSERT INTO `cart_details` (`cart_details_id`, `cart_code`, `product_id`, `quant
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Cấu trúc bảng cho bảng `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -122,7 +120,7 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `feedback`
+-- Đang đổ dữ liệu cho bảng `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
@@ -131,7 +129,7 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `momo`
+-- Cấu trúc bảng cho bảng `momo`
 --
 
 CREATE TABLE `momo` (
@@ -146,7 +144,7 @@ CREATE TABLE `momo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `momo`
+-- Đang đổ dữ liệu cho bảng `momo`
 --
 
 INSERT INTO `momo` (`id_momo`, `partner_code`, `order_code`, `amount`, `order_info`, `order_type`, `trans_id`, `pay_type`) VALUES
@@ -158,7 +156,7 @@ INSERT INTO `momo` (`id_momo`, `partner_code`, `order_code`, `amount`, `order_in
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -180,7 +178,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `product_price`, `product_sale`, `product_quantity`, `product_image`, `brand_id`, `created_at`, `updated_at`, `product_color_image`, `product_color_name`, `remarkable`, `product_size`) VALUES
@@ -211,12 +209,19 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `pr
 (61, 'Chân váy Costliness', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nChân váy Tuysi Costliness mang vẻ đẹp thanh lịch và dịu dàng, là lựa chọn lý tưởng cho những cô nàng yêu thích phong cách nữ tính và sang trọng.\r\n\r\n- Chất liệu Tuysi cao cấp, mềm mại, thoáng mát và giữ phom dáng tốt\r\n\r\n- Dáng xòe nhẹ nhàng, mang lại vẻ nữ tính và uyển chuyển\r\n\r\n- Cạp cao giúp tôn dáng, tạo cảm giác eo thon và chân dài\r\n\r\n- Độ dài qua gối, thanh lịch và phù hợp với nhiều hoàn cảnh\r\n\r\n- Dễ phối hợp với áo sơ mi, áo thun hoặc áo croptop để tạo phong cách đa dạng\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1000000.00, 15, 10, 'cost.webp', 13, '2024-12-10 05:22:05', '2024-12-10 05:22:05', 'cost5.png', 'Hồng san hô', 0, 0),
 (62, 'Chân váy xòe Jacquard', 'Lựa chọn chất liệu Jacquard cao cấp, kết hợp giữa độ bền và hoa văn dệt nổi tinh xảo, chân váy có độ dày vừa phải, giúp giữ phom dáng tốt, mang lại cảm giác chắc chắn, nhưng vẫn đảm bảo sự mềm mại và thoải mái cho người mặc.Họa tiết chấm bi cổ điển mà sang trọng, thời thượng giúp bạn nổi bật trong bất kỳ dịp nào.\r\n\r\nThiết kế xòe nhẹ nhàng, độ dài vừa phải, tôn lên nét nữ tính và phù hợp với nhiều vóc dáng khác nhau. Bạn có thể dễ dàng kết hợp chân váy với áo sơ mi, áo thun hoặc áo blouse để tạo nên phong cách thời trang vừa thanh lịch vừa quyến rũ.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 11111111.00, 11, 10, 'jac1.webp', 13, '2024-12-10 05:23:53', '2024-12-10 05:23:53', 'jac6.png', 'Đen', 0, 0),
 (63, 'Chân váy da chữ A', 'Thông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1400000.00, 15, 10, 'A1.webp', 13, '2024-12-10 05:25:20', '2024-12-10 05:25:20', 'jac6.png', 'Đen', 0, 0),
-(64, 'Chân váy Khaki A', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nChân váy Khaki A Office là biểu tượng của sự tối giản và thanh lịch, phù hợp cho môi trường công sở cũng như các dịp trang trọng.\r\n\r\n- Chất liệu khaki cao cấp, thoáng mát, bền đẹp và giữ phom tốt\r\n\r\n- Thiết kế dáng chữ A thanh lịch, dễ mặc và tôn dáng\r\n\r\n- Độ dài vừa phải, phù hợp với môi trường công sở và các dịp trang trọng\r\n\r\n- Dễ dàng phối đồ với áo sơ mi, áo thun hoặc blazer để tạo phong cách đa dạng\r\n\r\n- Phù hợp cho nhiều dịp: đi làm, gặp gỡ đối tác hoặc các sự kiện cần sự chỉn chu\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 15, 10, 'khaki1.webp', 13, '2024-12-10 05:26:49', '2024-12-10 05:26:49', 'khaki6.png', 'Be', 0, 0);
+(64, 'Chân váy Khaki A', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nChân váy Khaki A Office là biểu tượng của sự tối giản và thanh lịch, phù hợp cho môi trường công sở cũng như các dịp trang trọng.\r\n\r\n- Chất liệu khaki cao cấp, thoáng mát, bền đẹp và giữ phom tốt\r\n\r\n- Thiết kế dáng chữ A thanh lịch, dễ mặc và tôn dáng\r\n\r\n- Độ dài vừa phải, phù hợp với môi trường công sở và các dịp trang trọng\r\n\r\n- Dễ dàng phối đồ với áo sơ mi, áo thun hoặc blazer để tạo phong cách đa dạng\r\n\r\n- Phù hợp cho nhiều dịp: đi làm, gặp gỡ đối tác hoặc các sự kiện cần sự chỉn chu\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 15, 10, 'khaki1.webp', 13, '2024-12-10 05:26:49', '2024-12-10 05:26:49', 'khaki6.png', 'Be', 0, 0),
+(65, 'Áo sơ mi Tencel Divas', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nÁo sơ mi Divas nổi bật với phần cổ tròn được tạo tầng bèo nhẹ nhàng, mang lại vẻ nữ tính, tinh tế mà không kém phần thanh lịch.\r\n\r\nThiết kế tay dài xếp ly thời thượng không chỉ tăng thêm sự duyên dáng mà còn thể hiện gu thời trang hiện đại, phù hợp cho cả công sở và các dịp trang trọng.\r\n\r\n- Chất liệu Tencel cao cấp, mềm mại, thoáng mát và bền đẹp\r\n\r\n- Cổ tròn tạo tầng bèo nhẹ nhàng, mang lại vẻ nữ tính và sang trọng\r\n\r\n- Tay dài xếp ly thời thượng, tạo điểm nhấn phong cách\r\n\r\n- Phom dáng thanh lịch, dễ dàng phối với chân váy, quần âu hoặc quần jeans\r\n\r\n- Phù hợp cho nhiều dịp như công sở, sự kiện, hoặc dạo phố\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 990.00, 10, 50, 'sp1.webp', 10, '2024-12-10 06:28:08', '2024-12-10 06:28:08', 'be.png', 'be', 0, 0),
+(66, 'Áo vest Tweed Kose', 'Nằm trong BST mùa thu đông 2024, “SOLAR - SHINE TOGETHER” được trình làng với giới mộ điệu như một bản hòa ca tôn vinh tinh thần tự do, sự lạc quan và vẻ đẹp rực rỡ của phái đẹp. Đánh dấu sự chuyển mình của phụ nữ trong thời hiện đại, vượt qua những tiêu chuẩn “kép” áp đặt lên họ.\r\n\r\nNhững thiết kế trong BST hướng tới tôn vinh tính nữ hiện đại thông qua từng đường nét – từ sự mềm mại và duyên dáng đến sự mạnh mẽ và tự chủ. Mỗi sản phẩm đều thể hiện tính kiêu hãnh, đồng thời phá bỏ mọi rào cản để phụ nữ tự do thể hiện cá tính riêng, sống đúng với con người thật của mình.\r\n\r\nÁo vest Tweed Kose là một thiết kế thanh lịch và hiện đại, mang đến vẻ ngoài sang trọng với chất liệu tweed cao cấp, bền bỉ. \r\n\r\nThiết kế cổ đức không chân mang đến sự tinh tế, mới mẻ, giúp chiếc áo vừa giữ được nét trang trọng của vest nhưng vẫn tạo cảm giác nhẹ nhàng, thoải mái cho người mặc. Độ dài ngang hông tôn dáng, cân đối và dễ phối đồ. Với kiểu dáng này, bạn có thể dễ dàng kết hợp áo vest với áo sơ mi, chân váy, quần tây hay quần jeans để tạo nên phong cách từ chuyên nghiệp đến thời trang đường phố.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.\r\n', 1990000.00, 5, 30, 'sp2.webp', 10, '2024-12-10 06:30:03', '2024-12-10 06:30:03', 'kẻ be.png', 'Kẻ Be', 0, 0),
+(67, 'Áo thun vân hoa', 'Áo thun nằm trong BST Her Signature với những chi tiết thiết kế cách điệu tinh tế, kết hợp với họa tiết nhẹ nhàng, thể hiện tuyên ngôn về phong cách thời trang công sở kiểu mới – một phong cách tự tin, thanh lịch nhưng không kém phần duyên dáng.\r\n\r\n- Chất liệu thun cao cấp, mềm mại, co giãn và ôm dáng\r\n\r\n- Họa tiết vân hoa trang nhã, mang lại vẻ nữ tính, thanh lịch\r\n\r\n- Cổ tròn cách điệu, tạo điểm nhấn tinh tế và thời trang\r\n\r\n- Tay dài phù hợp cho những ngày se lạnh hoặc diện vào các dịp trang trọng\r\n\r\n- Dễ phối với nhiều loại trang phục, phù hợp cho dạo phố, công sở hoặc gặp gỡ bạn bè\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 790.00, 6, 20, 'sp3.webp', 10, '2024-12-10 06:31:38', '2024-12-10 06:31:38', 'trắng.png', 'trắng', 0, 0),
+(68, 'Áo vest Tuysi You Beige', 'Nằm trong BST mùa thu đông 2024, “SOLAR - SHINE TOGETHER” được trình làng với giới mộ điệu như một bản hòa ca tôn vinh tinh thần tự do, sự lạc quan và vẻ đẹp rực rỡ của phái đẹp. Đánh dấu sự chuyển mình của phụ nữ trong thời hiện đại, vượt qua những tiêu chuẩn “kép” áp đặt lên họ.\r\n\r\nNhững thiết kế trong BST hướng tới tôn vinh tính nữ hiện đại thông qua từng đường nét – từ sự mềm mại và duyên dáng đến sự mạnh mẽ và tự chủ. Mỗi sản phẩm đều thể hiện tính kiêu hãnh, đồng thời phá bỏ mọi rào cản để phụ nữ tự do thể hiện cá tính riêng, sống đúng với con người thật của mình.\r\n\r\nTự tin, nổi bật với phong cách chuyên nghiệp, thanh lịch và hiện đại, áo vest là lựa chọn lý tưởng cho môi trường công sở hoặc các dịp trang trọng. Được làm từ chất liệu Tuysi cao cấp, áo vest mềm mại nhưng vẫn giữ phom dáng chuẩn, giúp người mặc thoải mái suốt cả ngày dài. Màu beige trung tính mang đến vẻ ngoài nhã nhặn, dễ phối đồ, phù hợp với nhiều tone màu da và phong cách thời trang khác nhau. \r\n\r\nThiết kế ôm vừa vặn với các đường may tỉ mỉ tạo cảm giác gọn gàng, thanh thoát. Áo vest có phần cổ tạo kiểu nổi bật. Phần eo thắt nhẹ nhàng tôn dáng Dễ dàng phối cùng quần âu hoặc chân váy để tạo nên một bộ trang phục công sở hoàn hảo. \r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1990000.00, 9, 50, 'sp4.webp', 10, '2024-12-10 06:33:50', '2024-12-10 06:33:50', 'be.png', 'be', 0, 0),
+(69, 'Áo Gile kẻ Serge', 'Thiết kế nằm trong BST SAPPHIRE CHIC, lấy cảm hứng từ sắc xanh quý phái của đá Sapphire với những thiết kế công sở hiện đại, ghi dấu ấn với tính thẩm mỹ cao và sự tinh tế qua các chi tiết tạo điểm nhấn mà không mất đi nét sang trọng vốn có.\r\n\r\nÁo gile mang đến vẻ đẹp thanh lịch và hiện đại với thiết kế trẻ trung, thời thượng. Chất liệu vải Serge dệt vân chéo cao cấp không chỉ mềm mại mà còn bền bỉ, giữ được phom dáng chuẩn trong suốt thời gian dài sử dụng. Họa tiết kẻ sọc tinh tế giúp chiếc áo gile trở nên nổi bật nhưng vẫn dễ phối đồ, tạo nên nhiều phong cách thời trang đa dạng.\r\n\r\nThiết kế gile không tay, dáng ôm vừa vặn, giúp tôn lên vẻ ngoài lịch sự, chuyên nghiệp mà vẫn năng động. Bạn có thể phối áo gile kẻ Serge với áo sơ mi hoặc áo thun bên trong hay áo blazer bên ngoài để tạo nên bộ trang phục hoàn hảo cho công sở, sự kiện, hoặc dạo phố.\r\n\r\nHơn nữa, màu sắc trung tính và họa tiết kẻ tinh tế càng làm cho áo trở thành món đồ thời trang không thể thiếu trong tủ đồ của bạn.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1290000.00, 6, 60, 'sp5.webp', 10, '2024-12-10 06:36:21', '2024-12-10 06:36:21', 'kẻ ghi khói.png', 'Kẻ Ghi khói', 0, 0),
+(70, 'Áo Polo cổ viền', 'Áo được làm từ chất liệu cotton cao cấp mang đến cảm giác mềm mại, thoáng mát cho cả ngày dài hoạt động. Thiết kế cổ đức nhấn nhá với viền khác màu, tạo điểm nhấn tinh tế và độc đáo. Phom dáng vừa vặn tôn lên vẻ gọn gàng, trẻ trung, phù hợp cho nhiều dịp, từ đi làm, dạo phố đến tham gia các hoạt động ngoài trời.\r\n\r\n- Chất liệu cotton pha thun cao cấp, thoáng mát, co giãn tốt\r\n\r\n- Thiết kế cổ đức thanh lịch, viền khác màu tạo điểm nhấn tinh tế\r\n\r\n- Phom dáng vừa vặn, mang lại sự thoải mái và năng động\r\n\r\n- Dễ dàng phối hợp với quần jeans, quần tây, chân váy hoặc quần shorts\r\n\r\n- Phù hợp cho nhiều hoàn cảnh: công sở, dạo phố, thể thao hoặc du lịch\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 690.00, 13, 30, 'sp6.webp', 10, '2024-12-10 06:38:03', '2024-12-10 06:38:03', 'trắng.png', 'trắng', 0, 0),
+(71, 'Sơ mi lụa cổ V', 'Áo sơ mi cổ chữ V, tay dài. Gấu tay áo được thiết kế bo xếp ly điệu đà. Áo được tạo điểm nhấn thêu hoa chìm trước ngực, nhẹ nhàng và tinh tế. \r\n\r\nSử dụng vải lụa mềm mại tạo cảm giác dễ chịu cho người mặc. Nàng có thể mix cùng quần âu công sở, quần jeans hay zuýp các loại\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 167 cm\r\n\r\nCân nặng: 50 kg\r\n\r\nSố đo 3 vòng: 83-65-93 cm\r\n\r\nMẫu mặc size M Lưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 950.00, 7, 40, 'sp7.webp', 10, '2024-12-10 06:40:01', '2024-12-10 06:40:01', 'be vàng.png', 'be vàng', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_img`
+-- Cấu trúc bảng cho bảng `product_img`
 --
 
 CREATE TABLE `product_img` (
@@ -227,7 +232,7 @@ CREATE TABLE `product_img` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `product_img`
+-- Đang đổ dữ liệu cho bảng `product_img`
 --
 
 INSERT INTO `product_img` (`img_id`, `product_id`, `img_url`, `created_at`) VALUES
@@ -368,12 +373,40 @@ INSERT INTO `product_img` (`img_id`, `product_id`, `img_url`, `created_at`) VALU
 (167, 64, 'khaki5.webp', '2024-12-10 05:26:49'),
 (168, 64, 'khaki4.webp', '2024-12-10 05:26:49'),
 (169, 64, 'khaki3.webp', '2024-12-10 05:26:49'),
-(170, 64, 'khaki2.webp', '2024-12-10 05:26:49');
+(170, 64, 'khaki2.webp', '2024-12-10 05:26:49'),
+(171, 65, 'sp1.1.webp', '2024-12-10 06:28:08'),
+(172, 65, 'sp1.2.webp', '2024-12-10 06:28:08'),
+(173, 65, 'sp1.3.webp', '2024-12-10 06:28:08'),
+(174, 65, 'sp1.4.webp', '2024-12-10 06:28:08'),
+(175, 66, 'sp2.1.webp', '2024-12-10 06:30:03'),
+(176, 66, 'sp2.2.webp', '2024-12-10 06:30:03'),
+(177, 66, 'sp2.3.webp', '2024-12-10 06:30:03'),
+(178, 66, 'sp2.4.webp', '2024-12-10 06:30:03'),
+(179, 67, 'sp3.1.webp', '2024-12-10 06:31:38'),
+(180, 67, 'sp3.2.webp', '2024-12-10 06:31:38'),
+(181, 67, 'sp3.3.webp', '2024-12-10 06:31:38'),
+(182, 67, 'sp3.4.webp', '2024-12-10 06:31:38'),
+(183, 68, 'sp4.1.webp', '2024-12-10 06:33:50'),
+(184, 68, 'sp4.2.webp', '2024-12-10 06:33:50'),
+(185, 68, 'sp4.3.webp', '2024-12-10 06:33:50'),
+(186, 68, 'sp4.4.webp', '2024-12-10 06:33:50'),
+(187, 69, 'sp5.1.webp', '2024-12-10 06:36:21'),
+(188, 69, 'sp5.2.webp', '2024-12-10 06:36:21'),
+(189, 69, 'sp5.3.webp', '2024-12-10 06:36:21'),
+(190, 69, 'sp5.4.webp', '2024-12-10 06:36:21'),
+(191, 70, 'sp6.1.webp', '2024-12-10 06:38:03'),
+(192, 70, 'sp6.2.webp', '2024-12-10 06:38:03'),
+(193, 70, 'sp6.3.webp', '2024-12-10 06:38:03'),
+(194, 70, 'sp6.4.webp', '2024-12-10 06:38:03'),
+(195, 71, 'sp7.1.webp', '2024-12-10 06:40:01'),
+(196, 71, 'sp7.2.webp', '2024-12-10 06:40:01'),
+(197, 71, 'sp7.3.webp', '2024-12-10 06:40:01'),
+(198, 71, 'sp7.4.webp', '2024-12-10 06:40:01');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_sizes`
+-- Cấu trúc bảng cho bảng `product_sizes`
 --
 
 CREATE TABLE `product_sizes` (
@@ -383,7 +416,7 @@ CREATE TABLE `product_sizes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `product_sizes`
+-- Đang đổ dữ liệu cho bảng `product_sizes`
 --
 
 INSERT INTO `product_sizes` (`size_id`, `product_id`, `size_name`) VALUES
@@ -567,12 +600,33 @@ INSERT INTO `product_sizes` (`size_id`, `product_id`, `size_name`) VALUES
 (242, 64, 'M'),
 (243, 64, 'L'),
 (244, 64, 'XL'),
-(245, 64, 'XXL');
+(245, 64, 'XXL'),
+(246, 65, 'S'),
+(247, 65, 'M'),
+(248, 65, 'L'),
+(249, 66, 'S'),
+(250, 66, 'M'),
+(251, 66, 'L'),
+(252, 67, 'S'),
+(253, 67, 'M'),
+(254, 67, 'L'),
+(255, 68, 'S'),
+(256, 68, 'M'),
+(257, 68, 'L'),
+(258, 69, 'S'),
+(259, 69, 'M'),
+(260, 69, 'L'),
+(261, 70, 'S'),
+(262, 70, 'M'),
+(263, 70, 'L'),
+(264, 71, 'S'),
+(265, 71, 'M'),
+(266, 71, 'L');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `shipping`
+-- Cấu trúc bảng cho bảng `shipping`
 --
 
 CREATE TABLE `shipping` (
@@ -585,7 +639,7 @@ CREATE TABLE `shipping` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `shipping`
+-- Đang đổ dữ liệu cho bảng `shipping`
 --
 
 INSERT INTO `shipping` (`shipping_id`, `name`, `phone`, `address`, `note`, `user_id`) VALUES
@@ -595,7 +649,7 @@ INSERT INTO `shipping` (`shipping_id`, `name`, `phone`, `address`, `note`, `user
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sizes`
+-- Cấu trúc bảng cho bảng `sizes`
 --
 
 CREATE TABLE `sizes` (
@@ -606,7 +660,7 @@ CREATE TABLE `sizes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -621,7 +675,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`user_id`, `user`, `email`, `pass`, `created_at`, `role`, `address`, `phone`) VALUES
@@ -629,12 +683,13 @@ INSERT INTO `users` (`user_id`, `user`, `email`, `pass`, `created_at`, `role`, `
 (13, 'nam', '2@2', '$2y$10$qy8SVr80zwOIBr71ejRkNO8hCyR/Ufz68KGd/Gg0lZQ2lIO/1tn2.', '2024-11-05 10:35:17', 0, '2', '2'),
 (15, 'quan', '10@10', '$2y$10$6WplivjY3zib0PtEj10j1eWhcPktrKduH4NtCHbss0pD2mxl97rpi', '2024-11-18 02:41:48', 0, '1', '1'),
 (16, 'nam1', 'ya0058466@gmail.com', '$2y$10$tv1Qlrq3O2LqhsRq1d2G5OPDcVuIF0GafhoAnjbG6rc5RUeYKBGYe', '2024-11-24 13:58:10', 0, '1', '1'),
-(19, 'huan', 'huantx33@gmail.com', '$2y$10$liczzHIGc1C2VNWTJVeG8.BIqZ/EdUsfJL1VQGHYcvJaP9sX5MsWK', '2024-11-24 14:24:42', 0, 'Hà Nội', '0798740688');
+(19, 'huan', 'huantx33@gmail.com', '$2y$10$liczzHIGc1C2VNWTJVeG8.BIqZ/EdUsfJL1VQGHYcvJaP9sX5MsWK', '2024-11-24 14:24:42', 0, 'Hà Nội', '0798740688'),
+(20, 'nga', 'phamnga26092004@gmail.com', '$2y$10$CRh0awuyp7z7QKCsi5kxnuT33Y21JRZPNta68mvRT/QyQystOQ3vm', '2024-12-10 06:40:35', 0, 'hà nội', '0392953038');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vnpay`
+-- Cấu trúc bảng cho bảng `vnpay`
 --
 
 CREATE TABLE `vnpay` (
@@ -651,147 +706,147 @@ CREATE TABLE `vnpay` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `brands`
+-- Chỉ mục cho bảng `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`brand_id`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
--- Indexes for table `cart_details`
+-- Chỉ mục cho bảng `cart_details`
 --
 ALTER TABLE `cart_details`
   ADD PRIMARY KEY (`cart_details_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `feedback`
+-- Chỉ mục cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `momo`
+-- Chỉ mục cho bảng `momo`
 --
 ALTER TABLE `momo`
   ADD PRIMARY KEY (`id_momo`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `brand_id` (`brand_id`);
 
 --
--- Indexes for table `product_img`
+-- Chỉ mục cho bảng `product_img`
 --
 ALTER TABLE `product_img`
   ADD PRIMARY KEY (`img_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `product_sizes`
+-- Chỉ mục cho bảng `product_sizes`
 --
 ALTER TABLE `product_sizes`
   ADD PRIMARY KEY (`size_id`),
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `shipping`
+-- Chỉ mục cho bảng `shipping`
 --
 ALTER TABLE `shipping`
   ADD PRIMARY KEY (`shipping_id`),
   ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `username` (`user`);
 
 --
--- Indexes for table `vnpay`
+-- Chỉ mục cho bảng `vnpay`
 --
 ALTER TABLE `vnpay`
   ADD PRIMARY KEY (`vnpay_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `brands`
+-- AUTO_INCREMENT cho bảng `brands`
 --
 ALTER TABLE `brands`
   MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `cart_details`
+-- AUTO_INCREMENT cho bảng `cart_details`
 --
 ALTER TABLE `cart_details`
   MODIFY `cart_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `momo`
+-- AUTO_INCREMENT cho bảng `momo`
 --
 ALTER TABLE `momo`
   MODIFY `id_momo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT for table `product_img`
+-- AUTO_INCREMENT cho bảng `product_img`
 --
 ALTER TABLE `product_img`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
 
 --
--- AUTO_INCREMENT for table `product_sizes`
+-- AUTO_INCREMENT cho bảng `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=267;
 
 --
--- AUTO_INCREMENT for table `shipping`
+-- AUTO_INCREMENT cho bảng `shipping`
 --
 ALTER TABLE `shipping`
   MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `vnpay`
+-- AUTO_INCREMENT cho bảng `vnpay`
 --
 ALTER TABLE `vnpay`
   MODIFY `vnpay_id` int(11) NOT NULL AUTO_INCREMENT;
