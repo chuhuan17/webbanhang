@@ -3,9 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2024 at 06:27 AM
+-- Generation Time: Dec 10, 2024 at 06:43 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
+CREATE DATABASE IF NOT EXISTS clothing_store DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE clothing_store;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +22,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `clothing_store`
 --
-CREATE Database IF NOT EXISTS `clothing_store` ;
-USE `clothing_store`;
 
 -- --------------------------------------------------------
 
@@ -195,7 +195,6 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `pr
 (44, 'Đầm ôm cổ kiểu Pauline', '', 2490000.00, 19, 49, 'a2e5f733eb62034ff70bcd9015b09cb8.webp', 12, '2024-11-10 14:58:38', '2024-12-08 04:36:46', '003.png', 'Be', 1, 0),
 (45, 'Đầm xòe Rosalie', '', 2390000.00, 20, 50, '1cc773085f22bcda0562d5877edb1a9a.webp', 12, '2024-11-10 15:00:27', '2024-12-04 16:00:43', '049.png', 'Đen', 0, 0),
 (46, 'Đầm xòe Foral Lụa Midi', '', 1890000.00, 1, 50, '1e86e5194b950559f4ee6e0e6005e730.webp', 12, '2024-11-10 15:01:37', '2024-12-04 16:00:44', 'h15.png', 'Hồng kẹo', 1, 0),
-(47, '1', '1', 1.00, 1, 2, 'about.webp', 13, '2024-12-04 15:13:35', '2024-12-08 06:22:09', 'about.webp', '1', 0, 0),
 (48, 'Quần suông tuysi', 'Nằm trong BST mùa thu đông 2024, “SOLAR - SHINE TOGETHER” được trình làng với giới mộ điệu như một bản hòa ca tôn vinh tinh thần tự do, sự lạc quan và vẻ đẹp rực rỡ của phái đẹp. Đánh dấu sự chuyển mình của phụ nữ trong thời hiện đại, vượt qua những tiêu chuẩn “kép” áp đặt lên họ.\r\n\r\nNhững thiết kế trong BST hướng tới tôn vinh tính nữ hiện đại thông qua từng đường nét – từ sự mềm mại và duyên dáng đến sự mạnh mẽ và tự chủ. Mỗi sản phẩm đều thể hiện tính kiêu hãnh, đồng thời phá bỏ mọi rào cản để phụ nữ tự do thể hiện cá tính riêng, sống đúng với con người thật của mình.\r\n\r\nSử dụng chất kiệu vải Tuysi mềm nhẹ, thoải mái, thiết kế dáng suông che khuyết điểm tốt giúp nàng tự tin mỗi khi xuất hiện.\r\n\r\nQuần kèm hai túi sườn và độ dài ngang mắt cá chân. Cắt may chỉn chu, tỉ mỉ, nhấn ly giữa độc đáo, tạo điểm nhấn mới lạ cho thiết kế. \r\n\r\nNàng công sở có thể kết hợp với nhiều kiểu áo khác nhau để mang đến những bộ trang phục chỉn chu và lịch sự.  \r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1490000.00, 10, 10, 'túyi1.webp', 11, '2024-12-10 04:04:43', '2024-12-10 04:04:43', 'túyi6.png', 'Be', 0, 0),
 (49, 'Quần kẻ Serge ống suông', 'Chiếc quần Tây hiện đại được pha trộn hoàn hảo giữa phong cách thời trang trẻ trung và sự sang trọng của môi trường công sở. \r\n\r\nThiết kế lưng quần cạp cao kết hợp ống suông giúp tôn lên vóc dáng, mang lại sự thoải mái cho người mặc. Chất liệu vải Serge kết cấu từ các sợi Poly, Rayon, Spandex cùng đặc tính mềm mịn, thoáng mát, co giãn nhẹ, phù hợp cho mọi hoạt động hàng ngày như đi làm, đi chơi.\r\n\r\nHọa tiết kẻ thanh lịch, màu sắc trung tính, quần dễ dàng phối hợp với các loại áo từ áo thun đơn giản đến áo sơ mi, áo blazer để tạo nên vẻ ngoài thời thượng nhưng không kém phần thanh lịch.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1290000.00, 10, 10, 'serge1.webp', 11, '2024-12-10 04:07:51', '2024-12-10 04:07:51', 'serge6.png', 'Kẻ khói', 0, 0),
 (50, 'Quần ống đứng DIVAS', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nQuần Tây dáng ống đứng cổ điển giúp tôn dáng, tạo cảm giác chân dài và vóc dáng cân đối, phù hợp với mọi kiểu dáng cơ thể.\r\n\r\n- Chất liệu Tuysi cao cấp, mềm mại, thoáng mát và bền đẹp\r\n\r\n- Phom dáng ống đứng cổ điển, tôn dáng và tạo cảm giác cân đối\r\n\r\n- Thiết kế tối giản, tinh tế với đường may sắc sảo\r\n\r\n- Dễ phối với nhiều loại trang phục như áo sơ mi, blazer, hoặc áo thun\r\n\r\n- Phù hợp cho các dịp từ công sở, họp hành đến sự kiện trang trọng hoặc dạo phố\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1300000.00, 15, 10, 'divas1.webp', 11, '2024-12-10 04:10:12', '2024-12-10 04:10:12', 'divas6.png', 'Đen', 0, 0),
