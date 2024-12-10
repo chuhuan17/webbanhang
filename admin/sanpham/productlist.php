@@ -32,7 +32,7 @@ $product = new product;
 $show_product = $product->show_product();
 ?>
 <div class="admin-content-right">
-    <div class="admin-content-right-cartegory_list">
+    <div class="admin-content-right-cartegory_list" id="Table">
         <h1>Danh sách sản phẩm</h1>
         <table>
             <tr>
@@ -84,8 +84,14 @@ $show_product = $product->show_product();
             }
             ?>
         </table>
+        <div class="row">
+        <nav>
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+            </nav>
+        </div>
     </div>
 </div>
+<script src="../js/paginationadmin.js"></script>
 
 </body>
 

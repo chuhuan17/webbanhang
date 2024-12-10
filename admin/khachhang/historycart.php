@@ -30,6 +30,7 @@ if (!$show_historycart) {
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +38,11 @@ if (!$show_historycart) {
     <!-- Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
     <div class="container py-5">
         <h1 class="text-center mb-4">Lịch sử đơn hàng</h1>
-        <div class="table-responsive">
+        <div class="table-responsive" id="Table">
             <table class="table table-bordered table-striped">
                 <thead class="table-primary text-center align-middle">
                     <tr>
@@ -89,12 +91,25 @@ if (!$show_historycart) {
                     ?>
                 </tbody>
             </table>
+            <div class="row">
+                <nav>
+                    <ul class="pagination justify-content-center" id="pagination"></ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <nav>
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+            </nav>
         </div>
         <div class="text-center mt-4">
             <a href="index.php" class="btn btn-secondary">Quay lại trang chính</a>
         </div>
     </div>
+    <script src="../js/paginationadmin.js"></script>
+
     <!-- Link Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
