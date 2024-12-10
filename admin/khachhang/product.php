@@ -15,6 +15,7 @@ if ($result_chitiet->num_rows > 0) {
         <style>
             a {
                 text-decoration: none;
+                color: black;
             }
         </style>
         <div class="product py-5">
@@ -145,34 +146,42 @@ if ($result_chitiet->num_rows > 0) {
                             <!-- Phần chi tiết sản phẩm -->
                             <!-- Phần chi tiết sản phẩm -->
                             <div class="mb-3">
-                                <h5 class="fw-bold">Chi tiết sản phẩm:</h5>
-                                <div class="collapse" id="product-details">
+                                <h5 class="fw-bold" style="margin-top: 5px;">Chi tiết sản phẩm:</h5>
+                                <div id="product-details" style="max-height: 100px; overflow: hidden; transition: max-height 0.3s ease;">
                                     <?php echo nl2br(htmlspecialchars($chitiet['product_description'])); ?>
                                 </div>
-                                <button class="btn btn-link p-0 text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#product-details" aria-expanded="false" aria-controls="product-details" id="toggle-button">
+                                <button
+                                    class="btn btn-link p-0 text-primary"
+                                    type="button"
+                                    id="toggle-button"
+                                    aria-expanded="false">
                                     Xem thêm
                                 </button>
                             </div>
 
+
+
                             <script>
-                                // Khởi tạo đối tượng Collapse của Bootstrap
-                                var collapseElement = new bootstrap.Collapse(document.getElementById('product-details'), {
-                                    toggle: false // Đảm bảo không tự động mở khi trang tải
-                                });
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const details = document.getElementById('product-details');
+                                    const toggleButton = document.getElementById('toggle-button');
 
-                                var toggleButton = document.getElementById('toggle-button');
-
-                                // Lắng nghe sự kiện Bootstrap để thay đổi văn bản của nút khi mở/thu gọn
-                                collapseElement._element.addEventListener('shown.bs.collapse', function() {
-                                    toggleButton.textContent = 'Thu gọn';
-                                    toggleButton.setAttribute('aria-expanded', 'true');
-                                });
-
-                                collapseElement._element.addEventListener('hidden.bs.collapse', function() {
-                                    toggleButton.textContent = 'Xem thêm';
-                                    toggleButton.setAttribute('aria-expanded', 'false');
+                                    toggleButton.addEventListener('click', function() {
+                                        if (details.style.maxHeight === '100px') {
+                                            // Mở rộng
+                                            details.style.maxHeight = details.scrollHeight + 'px';
+                                            toggleButton.textContent = 'Thu gọn';
+                                            toggleButton.setAttribute('aria-expanded', 'true');
+                                        } else {
+                                            // Thu gọn
+                                            details.style.maxHeight = '100px';
+                                            toggleButton.textContent = 'Xem thêm';
+                                            toggleButton.setAttribute('aria-expanded', 'false');
+                                        }
+                                    });
                                 });
                             </script>
+
 
 
 
