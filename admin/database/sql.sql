@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2024 at 05:41 AM
+-- Generation Time: Dec 10, 2024 at 06:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -202,7 +202,15 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_description`, `pr
 (53, 'Quần suông Tuysi Magic', '- Sử dụng chất kiệu vải Tuysi mềm nhẹ, thoải mái, thiết kế che khuyết điểm tốt giúp nàng tự tin mỗi khi xuất hiện.\r\n\r\n- Quần kèm hai túi sườn và độ dài ngang mắt cá chân. Thiết kế chỉn chu, tỉ mỉ, nhấn ly nhẹ nhàng.\r\n\r\n- Nàng công sở có thể kết hợp với nhiều kiểu áo khác nhau để mang đến những bộ trang phục chỉn chu và lịch sự.  \r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1390000.00, 15, 10, 'tuysi1.webp', 11, '2024-12-10 04:16:04', '2024-12-10 04:16:04', 'tuysi6.png', 'Trắng', 0, 0),
 (54, 'Quần ông loe Artiste', 'Thiết kế quần ống loe kết hợp hoàn hảo giữa nét cổ điển và phong cách hiện đại, mang đến vẻ ngoài quyến rũ, thời thượng cho người mặc.\r\n\r\n- Chất liệu Tuysi cao cấp, thoáng mát, mềm mại và giữ phom dáng đẹp\r\n\r\n- Thiết kế ống loe nhẹ nhàng, tôn lên chiều cao và vẻ thanh thoát\r\n\r\n- Cạp cao vừa vặn, tôn vòng eo, phù hợp với nhiều dáng người\r\n\r\n- Dễ dàng phối hợp với các kiểu áo để tạo phong cách khác nhau\r\n\r\n- Phù hợp cho nhiều dịp: đi làm, dạo phố, gặp gỡ bạn bè, hoặc các sự kiện quan trọng\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1111111.00, 10, 10, 'artiste1.webp', 11, '2024-12-10 04:18:41', '2024-12-10 04:18:41', 'artiste6.png', 'Đen', 0, 0),
 (55, 'Quần Baggy Muse', 'Ánh nắng mùa thu, dù không còn chói chang, vẫn mang đến cảm giác ấm áp, nhẹ nhàng tựa như sự mềm mại và lãng mạn luôn hiện hữu bên trong mỗi người phụ nữ. Đây chính là nguồn cảm hứng chủ đạo cho những thiết kế tinh tế trong BST Muse of the Sun.\r\n\r\nQuần Tuysi ống Baggy cạp cao, độ dài trên ngang mắt cá chân. Ống có độ ôm nhẹ, chiết ly thân trước thanh lịch, trẻ trung. 2 bên quần có 2 túi chéo. \r\n\r\nThiết kế quần phù hợp để nàng phối cùng nhiều item khác nhau, từ thanh lịch công sở với sơ mi cho đến năng động trẻ trung cùng áo thun.\r\n\r\nChất liệu Tuysi thoáng mát và thấm hút mồ hôi tốt. Hơn nữa còn giữ form quần suốt cả ngày dài.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 15, 10, 'muse1.webp', 11, '2024-12-10 04:21:04', '2024-12-10 04:21:04', 'muse6.png', 'Trắng', 0, 0),
-(56, 'Quần Tây Poly', 'Quần Tây ống đứng là một item không thể thiếu trong tủ đồ của những ai yêu thích phong cách đơn giản, thanh lịch nhưng vẫn thời trang.\r\n\r\nThiết kế lựa chọn chất liệu Tuysi được dệt từ những sợi Poly cao cấp mang lại độ bền và khả năng giữ dáng tốt. Quần còn có đặc tính thoáng mát, giúp bạn cảm thấy thoải mái cả khi làm việc hay tham gia các sự kiện. \r\n\r\nQuần dáng ống đứng cổ điển, tôn lên vóc dáng thon gọn, tạo cảm giác chuyên nghiệp, chỉn chu cho người mặc. Phần túi sườn thiết kế khéo léo, không chỉ tăng thêm tính tiện dụng mà còn giữ được vẻ ngoài thời thượng và gọn gàng.\r\n\r\nQuần dễ dàng phối hợp với áo sơ mi, blazer hoặc áo thun, mang lại vẻ ngoài tinh tế cho cả công sở lẫn các buổi gặp gỡ quan trọng.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 10, 10, 'poly1.webp', 11, '2024-12-10 04:22:59', '2024-12-10 04:22:59', 'poly6.png', 'Đen', 0, 0);
+(56, 'Quần Tây Poly', 'Quần Tây ống đứng là một item không thể thiếu trong tủ đồ của những ai yêu thích phong cách đơn giản, thanh lịch nhưng vẫn thời trang.\r\n\r\nThiết kế lựa chọn chất liệu Tuysi được dệt từ những sợi Poly cao cấp mang lại độ bền và khả năng giữ dáng tốt. Quần còn có đặc tính thoáng mát, giúp bạn cảm thấy thoải mái cả khi làm việc hay tham gia các sự kiện. \r\n\r\nQuần dáng ống đứng cổ điển, tôn lên vóc dáng thon gọn, tạo cảm giác chuyên nghiệp, chỉn chu cho người mặc. Phần túi sườn thiết kế khéo léo, không chỉ tăng thêm tính tiện dụng mà còn giữ được vẻ ngoài thời thượng và gọn gàng.\r\n\r\nQuần dễ dàng phối hợp với áo sơ mi, blazer hoặc áo thun, mang lại vẻ ngoài tinh tế cho cả công sở lẫn các buổi gặp gỡ quan trọng.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 10, 10, 'poly1.webp', 11, '2024-12-10 04:22:59', '2024-12-10 04:22:59', 'poly6.png', 'Đen', 0, 0),
+(57, 'Đầm ôm cổ V', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nĐầm Opulence nổi bật với phần thân tạo kiểu Gile thời thượng, mang đến vẻ đẹp sang trọng và cá tính. Cổ V kết hợp dáng ôm thanh thoát tôn lên vẻ đẹp người mặc, tạo cảm giác tinh tế mà quyến rũ.\r\n\r\n- Chất liệu Tuysi cao cấp, mềm mại, thoáng mát và giữ phom dáng chuẩn\r\n\r\n- Thiết kế cổ V thanh lịch, tôn dáng và tăng vẻ quyến rũ\r\n\r\n- Thân đầm cách điệu theo kiểu áo gile, mang lại phong cách thời thượng, sang trọng\r\n\r\n- Dáng ôm tôn lên đường cong cơ thể, phù hợp với nhiều dịp\r\n\r\n- Dễ phối hợp với giày cao gót và phụ kiện để tạo nên vẻ ngoài hoàn hảo\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 999999.00, 15, 10, 'V1.webp', 12, '2024-12-10 05:06:40', '2024-12-10 05:06:40', 'v6.png', 'Đỏ mận', 0, 0),
+(58, 'Đầm ôm cổ Pauline', 'Nằm trong BST mùa thu đông 2024, “SOLAR - SHINE TOGETHER” được trình làng với giới mộ điệu như một bản hòa ca tôn vinh tinh thần tự do, sự lạc quan và vẻ đẹp rực rỡ của phái đẹp. Đánh dấu sự chuyển mình của phụ nữ trong thời hiện đại, vượt qua những tiêu chuẩn “kép” áp đặt lên họ.\r\n\r\nNhững thiết kế trong BST hướng tới tôn vinh tính nữ hiện đại thông qua từng đường nét – từ sự mềm mại và duyên dáng đến sự mạnh mẽ và tự chủ. Mỗi sản phẩm đều thể hiện tính kiêu hãnh, đồng thời phá bỏ mọi rào cản để phụ nữ tự do thể hiện cá tính riêng, sống đúng với con người thật của mình.\r\n\r\n- Chất liệu Tuysi cao cấp, co giãn nhẹ, thoải mái và tôn dáng\r\n\r\n- Thiết kế cổ đức cách điệu, mang lại nét trang nhã, thanh lịch\r\n\r\n- Hàng khuy nổi bật ở thân trước, tạo điểm nhấn sang trọng\r\n\r\n- Chi tiết xếp ly ở vai, làm tăng vẻ mềm mại và tinh tế\r\n\r\n- Tay dài phù hợp cho thời tiết se lạnh cùng các dịp trang trọng\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S Lưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1300000.00, 15, 10, 'pau1.webp', 12, '2024-12-10 05:08:06', '2024-12-10 05:08:06', 'pau6.png', 'Be', 0, 0),
+(59, 'Đầm xòe Rosalie', 'Rosalie  nằm trong BST Her Signature với những chi tiết thiết kế cách điệu tinh tế, kết hợp với họa tiết nhẹ nhàng, thể hiện tuyên ngôn về phong cách thời trang công sở kiểu mới – một phong cách tự tin, thanh lịch nhưng không kém phần duyên dáng.\r\n\r\n- Đầm lựa chọn chất liệu Tuysi cao cấp, mềm mại và thoáng mát, tạo sự thoải mái cho người mặc\r\n\r\n- Thiết kế cổ cách điệu độc đáo, mang lại vẻ thanh lịch, duyên dáng\r\n\r\n- Các chi tiết xếp ly nhẹ nhàng, tạo độ xòe uyển chuyển, tôn lên vẻ đẹp cơ thể\r\n\r\n- Tay dài thanh lịch, phù hợp cho nhiều dịp từ dạo phố đến sự kiện trang trọng\r\n\r\n- Dễ phối với giày cao gót và phụ kiện tinh tế để hoàn thiện phong cách\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 10, 10, 'rosa1.webp', 12, '2024-12-10 05:09:51', '2024-12-10 05:09:51', 'rosa6.png', 'Hồng san hô', 0, 0),
+(60, 'Đầm lụa chấm bi Lucille', 'Thời thượng, sang trọng trong nền họa tiết chấm bi bắt mắt, thiết kế đầm lụa mới là lựa chọn hoàn hảo cho buổi tiệc, sự kiện hay dạo phố. Chất liệu lụa cao cấp mềm mại, bóng nhẹ giúp đầm ôm vừa vặn, tạo hiệu ứng uyển chuyển, mượt mà theo từng bước đi. \r\n\r\nThiết kế cổ đổ nhẹ nhàng, tay dài phù hợp cho cả những ngày se lạnh. Đầm dễ dàng kết hợp với giày cao gót và các phụ kiện tinh tế để tạo nên vẻ ngoài nổi bật, quyến rũ.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1111111.00, 15, 10, 'lua1.webp', 12, '2024-12-10 05:11:16', '2024-12-10 05:11:16', 'lua6.png', 'Đen', 0, 0),
+(61, 'Chân váy Costliness', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nChân váy Tuysi Costliness mang vẻ đẹp thanh lịch và dịu dàng, là lựa chọn lý tưởng cho những cô nàng yêu thích phong cách nữ tính và sang trọng.\r\n\r\n- Chất liệu Tuysi cao cấp, mềm mại, thoáng mát và giữ phom dáng tốt\r\n\r\n- Dáng xòe nhẹ nhàng, mang lại vẻ nữ tính và uyển chuyển\r\n\r\n- Cạp cao giúp tôn dáng, tạo cảm giác eo thon và chân dài\r\n\r\n- Độ dài qua gối, thanh lịch và phù hợp với nhiều hoàn cảnh\r\n\r\n- Dễ phối hợp với áo sơ mi, áo thun hoặc áo croptop để tạo phong cách đa dạng\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1000000.00, 15, 10, 'cost.webp', 13, '2024-12-10 05:22:05', '2024-12-10 05:22:05', 'cost5.png', 'Hồng san hô', 0, 0),
+(62, 'Chân váy xòe Jacquard', 'Lựa chọn chất liệu Jacquard cao cấp, kết hợp giữa độ bền và hoa văn dệt nổi tinh xảo, chân váy có độ dày vừa phải, giúp giữ phom dáng tốt, mang lại cảm giác chắc chắn, nhưng vẫn đảm bảo sự mềm mại và thoải mái cho người mặc.Họa tiết chấm bi cổ điển mà sang trọng, thời thượng giúp bạn nổi bật trong bất kỳ dịp nào.\r\n\r\nThiết kế xòe nhẹ nhàng, độ dài vừa phải, tôn lên nét nữ tính và phù hợp với nhiều vóc dáng khác nhau. Bạn có thể dễ dàng kết hợp chân váy với áo sơ mi, áo thun hoặc áo blouse để tạo nên phong cách thời trang vừa thanh lịch vừa quyến rũ.\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 11111111.00, 11, 10, 'jac1.webp', 13, '2024-12-10 05:23:53', '2024-12-10 05:23:53', 'jac6.png', 'Đen', 0, 0),
+(63, 'Chân váy da chữ A', 'Thông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1400000.00, 15, 10, 'A1.webp', 13, '2024-12-10 05:25:20', '2024-12-10 05:25:20', 'jac6.png', 'Đen', 0, 0),
+(64, 'Chân váy Khaki A', 'Thiết kế được lựa chọn trong BST Office Divas, mang đậm dấu ấn phong cách hiện đại dành riêng cho phái đẹp. Ngôn ngữ thiết kế tối giản được điểm xuyết khéo léo bằng các chi tiết cách điệu mềm mại không chỉ nâng tầm vẻ đẹp thanh lịch mà còn thể hiện cá tính độc lập và gu thời trang đẳng cấp.\r\n\r\nChân váy Khaki A Office là biểu tượng của sự tối giản và thanh lịch, phù hợp cho môi trường công sở cũng như các dịp trang trọng.\r\n\r\n- Chất liệu khaki cao cấp, thoáng mát, bền đẹp và giữ phom tốt\r\n\r\n- Thiết kế dáng chữ A thanh lịch, dễ mặc và tôn dáng\r\n\r\n- Độ dài vừa phải, phù hợp với môi trường công sở và các dịp trang trọng\r\n\r\n- Dễ dàng phối đồ với áo sơ mi, áo thun hoặc blazer để tạo phong cách đa dạng\r\n\r\n- Phù hợp cho nhiều dịp: đi làm, gặp gỡ đối tác hoặc các sự kiện cần sự chỉn chu\r\n\r\nThông tin mẫu:\r\n\r\nChiều cao: 165 cm\r\n\r\nCân nặng: 49 kg\r\n\r\nSố đo 3 vòng: 81-63-90 cm\r\n\r\nMẫu mặc size S\r\n\r\nLưu ý: Màu sắc sản phẩm thực tế sẽ có sự chênh lệch nhỏ so với ảnh do điều kiện ánh sáng khi chụp và màu sắc hiển thị qua màn hình máy tính/ điện thoại.', 1200000.00, 15, 10, 'khaki1.webp', 13, '2024-12-10 05:26:49', '2024-12-10 05:26:49', 'khaki6.png', 'Be', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -327,7 +335,39 @@ INSERT INTO `product_img` (`img_id`, `product_id`, `img_url`, `created_at`) VALU
 (135, 56, 'poly5.webp', '2024-12-10 04:22:59'),
 (136, 56, 'poly4.webp', '2024-12-10 04:22:59'),
 (137, 56, 'poly3.webp', '2024-12-10 04:22:59'),
-(138, 56, 'poly2.webp', '2024-12-10 04:22:59');
+(138, 56, 'poly2.webp', '2024-12-10 04:22:59'),
+(139, 57, 'v5.webp', '2024-12-10 05:06:40'),
+(140, 57, 'v4.webp', '2024-12-10 05:06:40'),
+(141, 57, 'v3.webp', '2024-12-10 05:06:40'),
+(142, 57, 'V2.webp', '2024-12-10 05:06:40'),
+(143, 58, 'pau5.webp', '2024-12-10 05:08:06'),
+(144, 58, 'pau4.webp', '2024-12-10 05:08:06'),
+(145, 58, 'pau3.webp', '2024-12-10 05:08:06'),
+(146, 58, 'pau2.webp', '2024-12-10 05:08:06'),
+(147, 59, 'rosa5.webp', '2024-12-10 05:09:51'),
+(148, 59, 'rosa4.webp', '2024-12-10 05:09:51'),
+(149, 59, 'rosa3.webp', '2024-12-10 05:09:51'),
+(150, 59, 'rosa2.webp', '2024-12-10 05:09:51'),
+(151, 60, 'lua5.webp', '2024-12-10 05:11:16'),
+(152, 60, 'lua4.webp', '2024-12-10 05:11:16'),
+(153, 60, 'lua3.webp', '2024-12-10 05:11:16'),
+(154, 60, 'lua2.webp', '2024-12-10 05:11:16'),
+(155, 61, 'cost4.webp', '2024-12-10 05:22:05'),
+(156, 61, 'cost3.webp', '2024-12-10 05:22:05'),
+(157, 61, 'cost2.webp', '2024-12-10 05:22:05'),
+(158, 61, 'cost1.webp', '2024-12-10 05:22:05'),
+(159, 62, 'jac5.webp', '2024-12-10 05:23:53'),
+(160, 62, 'jac4.webp', '2024-12-10 05:23:53'),
+(161, 62, 'jac3.webp', '2024-12-10 05:23:53'),
+(162, 62, 'jac2.webp', '2024-12-10 05:23:53'),
+(163, 63, 'A5.webp', '2024-12-10 05:25:20'),
+(164, 63, 'A4.webp', '2024-12-10 05:25:20'),
+(165, 63, 'A3.webp', '2024-12-10 05:25:20'),
+(166, 63, 'A2.webp', '2024-12-10 05:25:20'),
+(167, 64, 'khaki5.webp', '2024-12-10 05:26:49'),
+(168, 64, 'khaki4.webp', '2024-12-10 05:26:49'),
+(169, 64, 'khaki3.webp', '2024-12-10 05:26:49'),
+(170, 64, 'khaki2.webp', '2024-12-10 05:26:49');
 
 -- --------------------------------------------------------
 
@@ -486,7 +526,47 @@ INSERT INTO `product_sizes` (`size_id`, `product_id`, `size_name`) VALUES
 (202, 56, 'M'),
 (203, 56, 'L'),
 (204, 56, 'XL'),
-(205, 56, 'XXL');
+(205, 56, 'XXL'),
+(206, 57, 'S'),
+(207, 57, 'M'),
+(208, 57, 'L'),
+(209, 57, 'XL'),
+(210, 57, 'XXL'),
+(211, 58, 'S'),
+(212, 58, 'M'),
+(213, 58, 'L'),
+(214, 58, 'XL'),
+(215, 58, 'XXL'),
+(216, 59, 'S'),
+(217, 59, 'M'),
+(218, 59, 'L'),
+(219, 59, 'XL'),
+(220, 59, 'XXL'),
+(221, 60, 'S'),
+(222, 60, 'M'),
+(223, 60, 'L'),
+(224, 60, 'XL'),
+(225, 60, 'XXL'),
+(226, 61, 'S'),
+(227, 61, 'M'),
+(228, 61, 'L'),
+(229, 61, 'XL'),
+(230, 61, 'XXL'),
+(231, 62, 'S'),
+(232, 62, 'M'),
+(233, 62, 'L'),
+(234, 62, 'XL'),
+(235, 62, 'XXL'),
+(236, 63, 'S'),
+(237, 63, 'M'),
+(238, 63, 'L'),
+(239, 63, 'XL'),
+(240, 63, 'XXL'),
+(241, 64, 'S'),
+(242, 64, 'M'),
+(243, 64, 'L'),
+(244, 64, 'XL'),
+(245, 64, 'XXL');
 
 -- --------------------------------------------------------
 
@@ -683,19 +763,19 @@ ALTER TABLE `momo`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `product_img`
 --
 ALTER TABLE `product_img`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
 
 --
 -- AUTO_INCREMENT for table `product_sizes`
 --
 ALTER TABLE `product_sizes`
-  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
+  MODIFY `size_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
 -- AUTO_INCREMENT for table `shipping`
